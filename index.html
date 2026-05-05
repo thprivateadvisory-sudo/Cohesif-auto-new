@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light">
+<title>Flottes & Véhicules — Cohesif Auto</title>
+<meta name="description" content="Vente, import, flottes professionnelles, solutions particuliers et pièces de collection — Cohesif Auto centralise l'ensemble de la chaîne automobile.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container">
+    <nav class="nav">
+      <a href="index.html" class="logo">
+        <img src="logo-cohesif-auto.png" alt="Cohesif Auto - Mobilité, Transport, Logistique" class="logo-img">
+      </a>
+      <a href="#contact" class="nav-cta">
+        <span class="cta-full">Demander un devis</span>
+        <span class="cta-short">Devis →</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- BREADCRUMB -->
+<div class="container">
+  <div class="breadcrumb">
+    <a href="index.html">Accueil</a>
+    <span class="sep">/</span>
+    <span class="current">Flottes & véhicules</span>
+  </div>
+</div>
+
+<!-- HERO PAGE -->
+<section class="page-hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="eyebrow eyebrow-live">
+          <span class="eyebrow-pulse"></span>
+          Devis gratuit en 48h · Sans engagement
+        </div>
+        <h1>Votre prochain véhicule, sans le <span class="accent">parcours du combattant.</span></h1>
+        <p class="lead">Achat, import, flotte ou pièce rare — on s'occupe de tout. Vous gagnez du temps, vous économisez sur le prix, et vous récupérez les clés. Devis gratuit sous 48h, sans engagement.</p>
+
+        <div class="hero-cta-row">
+          <a href="#contact" class="btn-primary btn-large">Obtenir mon devis gratuit →</a>
+          <a href="tel:0760903774" class="btn-secondary btn-large">07 60 90 37 74</a>
+        </div>
+
+        <div class="hero-trust">
+          <span class="trust-item">✓ Réponse sous 48h</span>
+          <span class="trust-item">✓ Sans engagement</span>
+          <span class="trust-item">✓ Devis gratuit</span>
+        </div>
+
+        <div class="toggle-wrap" role="tablist">
+          <button class="toggle-btn active" data-target="all">Tout voir</button>
+          <button class="toggle-btn" data-target="particulier">Particulier</button>
+          <button class="toggle-btn" data-target="pro">Professionnel</button>
+        </div>
+        <div class="toggle-info" id="toggleInfo">
+          <span class="toggle-info-dot"></span>
+          <span id="toggleInfoText"><strong>5 univers</strong> affichés</span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-image-wrap">
+          <img src="hero.svg" alt="Cohesif Auto - Mobilité, Transport, Logistique" loading="eager">
+          <div class="hero-image-overlay"></div>
+          <div class="hero-grid-pattern"></div>
+        </div>
+
+        <div class="hero-floating-card">
+          <div class="floating-card-header">
+            <div class="floating-card-dot"></div>
+            <span>Flotte active</span>
+          </div>
+          <div class="floating-card-stats">
+            <div class="floating-stat">
+              <span class="floating-stat-num">98<span class="pct">%</span></span>
+              <span class="floating-stat-label">Disponibilité</span>
+            </div>
+            <div class="floating-stat-sep"></div>
+            <div class="floating-stat">
+              <span class="floating-stat-num">48<span class="pct">h</span></span>
+              <span class="floating-stat-label">Délai réponse</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-badge-tag">
+          <span class="badge-tag-icon">★</span>
+          <div>
+            <span class="badge-tag-num">10+ ans</span>
+            <span class="badge-tag-label">d'expertise</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>Découvrir</span>
+    <span class="scroll-hint-line"></span>
+  </div>
+</section>
+
+<!-- BANDEAU GROUPE COHESIF -->
+<section class="groupe-band">
+  <div class="container">
+    <div class="groupe-content">
+      <div class="groupe-label">
+        <span class="groupe-dot"></span>
+        Pôle du Groupe Cohesif
+      </div>
+      <div class="groupe-poles">
+        <a href="https://cohesifbtp.fr" target="_blank" rel="noopener" class="groupe-pole">Cohesif BTP</a>
+        <span class="groupe-sep"></span>
+        <a href="https://cohesifaccess.fr" target="_blank" rel="noopener" class="groupe-pole">Cohesif Access</a>
+        <span class="groupe-sep"></span>
+        <a href="https://cohesifcommerce.fr" target="_blank" rel="noopener" class="groupe-pole">Cohesif Commerce</a>
+        <span class="groupe-sep"></span>
+        <span class="groupe-pole soon">Cohesif Energy <span class="soon-mini">Bientôt</span></span>
+        <span class="groupe-sep"></span>
+        <span class="groupe-pole current">Cohesif Auto</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BANDEAU GARANTIES -->
+<section class="trust-band">
+  <div class="container">
+    <div class="trust-grid">
+      <div class="trust-card">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="trust-content">
+          <h4>Devis gratuit</h4>
+          <p>Aucun frais, aucun engagement.</p>
+        </div>
+      </div>
+
+      <div class="trust-card">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="trust-content">
+          <h4>Réponse 48h</h4>
+          <p>Une proposition concrète, rapidement.</p>
+        </div>
+      </div>
+
+      <div class="trust-card">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="trust-content">
+          <h4>Garantie qualité</h4>
+          <p>Vérification mécanique sur chaque véhicule.</p>
+        </div>
+      </div>
+
+      <div class="trust-card">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 7l3-3h12l3 3v12a2 2 0 01-2 2H5a2 2 0 01-2-2V7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M3 7h18M9 11h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="trust-content">
+          <h4>Économies réelles</h4>
+          <p>Jusqu'à 30% vs concessionnaire.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHIFFRES CLÉS -->
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-bar">
+      <div class="stat-item">
+        <div class="stat-num">10<span class="plus">+</span></div>
+        <div class="stat-label">Ans d'expertise<br>automobile</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num">500<span class="plus">+</span></div>
+        <div class="stat-label">Véhicules<br>livrés</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num">40<span class="plus">+</span></div>
+        <div class="stat-label">Partenaires<br>EU & US</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num">48<span class="unit">h</span></div>
+        <div class="stat-label">Délai de réponse<br>moyen</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num">5</div>
+        <div class="stat-label">Univers<br>couverts</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 UNIVERS -->
+<section class="univers-section">
+  <div class="container">
+    <div class="univers-grid">
+
+      <!-- 1. VENTE -->
+      <div class="univers univers-1" data-audience="particulier pro">
+        <span class="univers-num">UNIVERS 01</span>
+        <span class="univers-tag">Vente</span>
+        <h3>Du daily driver au véhicule de <span class="accent">prestige.</span></h3>
+        <p>Dites-nous ce que vous cherchez et votre budget. <strong>On négocie pour vous</strong> et on vous fait économiser. Pas de marge gonflée comme en concession.</p>
+        <div class="univers-benefit">
+          <span class="benefit-tag">— 15 à 30% vs concessionnaire</span>
+        </div>
+
+        <div class="split">
+          <div class="split-item">
+            <div class="split-img">
+              <img src="classique.svg" alt="Véhicule classique" loading="lazy">
+            </div>
+            <h4>Véhicules classiques</h4>
+            <p>Citadines, berlines, SUV, utilitaires. Neuf et occasion sourcée.</p>
+            <span class="price">Sur devis</span>
+          </div>
+          <div class="split-item">
+            <div class="split-img">
+              <img src="prestige.svg" alt="Véhicule prestige" loading="lazy">
+            </div>
+            <h4>Véhicules prestige</h4>
+            <p>GT, sportives, premium. Sourcing rare, vérification mécanique complète.</p>
+            <span class="price">Sur devis</span>
+          </div>
+        </div>
+
+        <a href="#contact" class="univers-link" data-subject="vente">Trouver mon véhicule →</a>
+      </div>
+
+      <!-- 2. IMPORT -->
+      <div class="univers univers-2" data-audience="particulier pro">
+        <div class="univers-image">
+          <img src="import.svg" alt="Import véhicules - transport international" loading="lazy">
+          <div class="univers-image-overlay"></div>
+        </div>
+        <span class="univers-num">UNIVERS 02</span>
+        <span class="univers-tag">Import</span>
+        <h3>Le véhicule que vous voulez,<br>où qu'il soit.</h3>
+        <p>Vous repérez un véhicule en Allemagne, en Italie, aux US ou au Japon ? <strong>On l'achète, on l'inspecte et on vous le livre</strong>. Vous n'avez aucune démarche à gérer.</p>
+        <div class="univers-benefit">
+          <span class="benefit-tag">Livré sous 4 à 8 semaines</span>
+        </div>
+        <ul class="univers-features">
+          <li>Recherche ciblée selon votre cahier des charges</li>
+          <li>Inspection mécanique sur place avant achat</li>
+          <li>Démarches douanières & homologation FR incluses</li>
+          <li>Livraison à domicile partout en France</li>
+        </ul>
+        <a href="#contact" class="univers-link" data-subject="import">Je veux ce véhicule →</a>
+      </div>
+
+      <!-- 3. PARTICULIERS -->
+      <div class="univers univers-3" data-audience="particulier">
+        <span class="univers-num">UNIVERS 03</span>
+        <span class="univers-tag">Particuliers</span>
+        <h3>Achat, conseil, accompagnement.</h3>
+        <p>Pas le temps de chercher ? <strong>On le fait pour vous.</strong> Définition du besoin, sélection, négociation et livraison — un seul interlocuteur du début à la fin.</p>
+        <div class="univers-benefit">
+          <span class="benefit-tag">Gain de temps : 20-40h en moyenne</span>
+        </div>
+        <a href="#contact" class="univers-link" data-subject="particulier">Être accompagné →</a>
+      </div>
+
+      <!-- 4. PROFESSIONNELS -->
+      <div class="univers univers-4" data-audience="pro">
+        <div class="dashboard-mockup">
+          <div class="dashboard-header">
+            <div class="dashboard-dot"></div>
+            <div class="dashboard-dot"></div>
+            <div class="dashboard-dot"></div>
+            <span class="dashboard-title">Flotte · 24 véhicules</span>
+          </div>
+          <div class="dashboard-stats">
+            <div class="dashboard-stat">
+              <span class="dashboard-stat-num">98<span class="pct">%</span></span>
+              <span class="dashboard-stat-label">Disponibilité</span>
+            </div>
+            <div class="dashboard-stat">
+              <span class="dashboard-stat-num">12.4<span class="pct">k</span></span>
+              <span class="dashboard-stat-label">Km/mois</span>
+            </div>
+          </div>
+          <div class="dashboard-chart">
+            <div class="bar" style="height: 35%"></div>
+            <div class="bar" style="height: 55%"></div>
+            <div class="bar" style="height: 42%"></div>
+            <div class="bar" style="height: 70%"></div>
+            <div class="bar" style="height: 60%"></div>
+            <div class="bar" style="height: 85%"></div>
+            <div class="bar active" style="height: 78%"></div>
+          </div>
+        </div>
+        <span class="univers-num">UNIVERS 04</span>
+        <span class="univers-tag neutral">Professionnels</span>
+        <h3>Flottes prêtes à l'emploi.</h3>
+        <p>De 3 à 50 véhicules — sélectionnés, financés, assurés et livrés clés en main. <strong>Vous concentrez vos équipes sur leur métier</strong>, pas sur la gestion de flotte.</p>
+        <div class="univers-benefit">
+          <span class="benefit-tag">LLD · LOA · Achat — au choix</span>
+        </div>
+        <a href="#contact" class="univers-link" data-subject="flotte">Équiper ma flotte →</a>
+      </div>
+
+      <!-- 5. PIECES (passion B2C, masqué pour pro pur) -->
+      <div class="univers univers-5" data-audience="particulier">
+        <span class="univers-num">UNIVERS 05</span>
+        <span class="univers-tag warm">Atelier collection</span>
+        <h3>Pièces auto <span class="warm">& vintage.</span></h3>
+        <p>Vous restaurez une ancienne ou une youngtimer ? <strong>On retrouve les pièces introuvables</strong> grâce à notre réseau de 40+ partenaires européens et américains.</p>
+        <div class="univers-benefit">
+          <span class="benefit-tag warm">Pièces NOS, neuves, reconditionnées</span>
+        </div>
+        <a href="#piecesauto" class="univers-link warm">Découvrir l'atelier</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MODES FINANCEMENT -->
+<section class="modes">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Modes d'acquisition</div>
+      <h2 class="section-title">Trois manières de <span class="accent">monter à bord.</span></h2>
+      <p class="section-intro">Chaque univers est disponible selon le mode qui correspond à votre situation, particulier ou professionnelle.</p>
+    </div>
+
+    <div class="modes-grid">
+      <div class="mode">
+        <div class="mode-num">Mode 01</div>
+        <h3>Location longue durée</h3>
+        <span class="mode-sub">LLD · 24 à 60 mois</span>
+        <p>Loyer fixe, entretien inclus, pas d'immobilisation de capital. Idéal pour les flottes professionnelles et les particuliers qui privilégient un budget maîtrisé.</p>
+      </div>
+
+      <div class="mode">
+        <div class="mode-num">Mode 02</div>
+        <h3>Location flexible</h3>
+        <span class="mode-sub">Courte & moyenne durée</span>
+        <p>De quelques jours à plusieurs mois. Pour les besoins ponctuels, les chantiers, les remplacements ou les périodes de transition.</p>
+      </div>
+
+      <div class="mode">
+        <div class="mode-num">Mode 03</div>
+        <h3>Vente</h3>
+        <span class="mode-sub">Achat comptant ou financé</span>
+        <p>Acquisition pleine et entière, avec ou sans financement. Possibilité de reprise de votre véhicule actuel.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMENT ON TRAVAILLE -->
+<section class="process-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Comment on travaille</div>
+      <h2 class="section-title">Quatre étapes, <span class="accent">zéro charge mentale.</span></h2>
+      <p class="section-intro">De votre demande à la prise en main du véhicule, vous suivez une procédure claire avec un interlocuteur unique. Pas de surprise, pas de paperasse à faire vous-même.</p>
+    </div>
+
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="process-number">01</div>
+        <div class="process-line"></div>
+        <h3>Brief</h3>
+        <p>Vous nous décrivez votre besoin (modèle, budget, usage, délais) par téléphone ou via le formulaire. <strong>Gratuit, sans engagement.</strong></p>
+        <span class="process-time">5 à 15 min</span>
+      </div>
+
+      <div class="process-step">
+        <div class="process-number">02</div>
+        <div class="process-line"></div>
+        <h3>Sourcing</h3>
+        <p>On active notre réseau de 40+ partenaires en France et à l'étranger. Vous recevez <strong>2 à 5 propositions chiffrées</strong> sous 48h.</p>
+        <span class="process-time">24 à 48h</span>
+      </div>
+
+      <div class="process-step">
+        <div class="process-number">03</div>
+        <div class="process-line"></div>
+        <h3>Validation</h3>
+        <p>Vous choisissez votre véhicule. <strong>Inspection mécanique complète</strong>, négociation finale, signature et financement le cas échéant.</p>
+        <span class="process-time">3 à 7 jours</span>
+      </div>
+
+      <div class="process-step">
+        <div class="process-number">04</div>
+        <h3>Livraison</h3>
+        <p>Le véhicule est <strong>livré chez vous, prêt à rouler</strong>. Carte grise, assurance et garanties en règle. Vous prenez la route.</p>
+        <span class="process-time">Selon dispo</span>
+      </div>
+    </div>
+
+    <div class="process-cta">
+      <a href="#contact" class="btn-primary">Démarrer mon projet →</a>
+    </div>
+  </div>
+</section>
+
+<!-- POURQUOI NOUS -->
+<section class="why-section">
+  <div class="container">
+    <div class="why-grid-wrap">
+      <div class="why-header">
+        <div class="section-label">Pourquoi Cohesif Auto</div>
+        <h2 class="section-title">Quatre raisons de <span class="accent">nous choisir.</span></h2>
+        <p class="section-intro">Plus qu'un mandataire ou un concessionnaire — un partenaire qui mobilise toute la force d'un groupe pour répondre à votre besoin.</p>
+      </div>
+
+      <div class="why-grid">
+
+        <div class="why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="11" r="5" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M6 27c0-5 4.5-9 10-9s10 4 10 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="why-num">01</div>
+          <h3>Un seul interlocuteur</h3>
+          <p>Du sourcing à la livraison, vous parlez à une personne dédiée. Pas de service rebondissant, pas de transferts d'appels, pas de dilution de l'information.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.6"/>
+              <rect x="18" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.6"/>
+              <rect x="5" y="18" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.6"/>
+              <rect x="18" y="18" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.6"/>
+              <circle cx="16" cy="16" r="2.5" fill="currentColor"/>
+            </svg>
+          </div>
+          <div class="why-num">02</div>
+          <h3>La force du Groupe Cohesif</h3>
+          <p>BTP, Access, Commerce, Energy & Auto — cinq pôles synergiques. Vos besoins logistiques, énergétiques ou immobiliers trouvent une réponse intégrée.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="11" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M5 16h22M16 5c3 3 4.5 7 4.5 11s-1.5 8-4.5 11M16 5c-3 3-4.5 7-4.5 11s1.5 8 4.5 11" stroke="currentColor" stroke-width="1.6"/>
+            </svg>
+          </div>
+          <div class="why-num">03</div>
+          <h3>Réseau international</h3>
+          <p>Allemagne, Italie, États-Unis, Japon — nous activons un réseau de 40+ partenaires pour sourcer le véhicule ou la pièce que vous cherchez, où qu'il soit.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="11" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M16 9v7l4.5 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="why-num">04</div>
+          <h3>Réactivité 48h</h3>
+          <p>Une réponse argumentée sous 48h sur chaque demande, devis chiffré inclus. Les agences classiques mettent souvent 5 à 10 jours.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ATELIER COLLECTION -->
+<section class="vintage-section" id="piecesauto">
+  <div class="container">
+    <div class="vintage-wrap">
+
+      <div class="vintage-content">
+        <div class="section-label">Atelier collection</div>
+        <h2>Pièces rares pour <span class="warm">véhicules d'époque.</span></h2>
+        <p>Pour les passionnés qui restaurent une youngtimer, une ancienne ou un véhicule de collection, nous activons un réseau de partenaires européens et américains pour retrouver la pièce introuvable.</p>
+
+        <ul class="vintage-features">
+          <li>Recherche de pièces neuves, NOS et reconditionnées</li>
+          <li>Reproduction sur-mesure pour pièces indisponibles</li>
+          <li>Carrosserie, moteur, sellerie, chromes, intérieur</li>
+          <li>Conseil restauration et mise en relation experts</li>
+        </ul>
+
+        <a href="#contact" class="univers-link warm" data-subject="pieces">Trouver ma pièce →</a>
+      </div>
+
+      <div class="vintage-visual">
+        <div class="vintage-photo">
+          <img src="vintage.svg" alt="Atelier collection - véhicule vintage" loading="lazy">
+        </div>
+        <div class="vintage-quote-overlay">
+          <div class="vintage-quote">
+            La pièce qui vous bloque depuis six mois, on a probablement le contact qui l'a en stock.
+          </div>
+          <div class="vintage-stats">
+            <div class="vintage-stat">
+              <span class="num">40<span class="warm">+</span></span>
+              <span class="label">Partenaires actifs</span>
+            </div>
+            <div class="vintage-stat">
+              <span class="num">EU<span class="warm">/</span>US</span>
+              <span class="label">Sourcing international</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CAS D'USAGE -->
+<section class="cases-section">
+  <div class="container">
+    <div class="cases-header">
+      <div class="section-label">Ils nous ont fait confiance</div>
+      <h2 class="section-title">Trois exemples concrets de <span class="accent">livraisons réussies.</span></h2>
+      <p class="section-intro">Du véhicule de prestige sourcé à l'étranger à la pièce de collection introuvable — voici comment Cohesif Auto résout des problèmes concrets.</p>
+    </div>
+
+    <div class="cases-grid">
+
+      <!-- CAS 1 - Particulier prestige -->
+      <article class="case-card">
+        <div class="case-tag">Particulier · Prestige</div>
+        <div class="case-stat">
+          <span class="case-stat-num">−18<span class="case-stat-unit">k€</span></span>
+          <span class="case-stat-label">vs concession FR</span>
+        </div>
+        <h3 class="case-title">Porsche 911 GT3 RS sourcée en Allemagne</h3>
+        <p class="case-text">Un dirigeant cherchait une <strong>Porsche 911 GT3 RS pour ses 50 ans</strong>. Stock français saturé, prix gonflés. Nous l'avons sourcée chez un partenaire de Stuttgart, vérifiée mécaniquement sur place, et livrée homologuée à Paris.</p>
+        <div class="case-meta">
+          <span class="case-meta-item">
+            <span class="case-meta-label">Délai</span>
+            <span class="case-meta-value">3 semaines</span>
+          </span>
+          <span class="case-meta-divider"></span>
+          <span class="case-meta-item">
+            <span class="case-meta-label">Origine</span>
+            <span class="case-meta-value">Allemagne</span>
+          </span>
+        </div>
+      </article>
+
+      <!-- CAS 2 - Pro flotte -->
+      <article class="case-card case-card-featured">
+        <div class="case-tag">Professionnel · Flotte</div>
+        <div class="case-stat">
+          <span class="case-stat-num">8<span class="case-stat-unit">véhicules</span></span>
+          <span class="case-stat-label">livrés clés en main</span>
+        </div>
+        <h3 class="case-title">Flotte BTP pour 12 salariés, en LLD 48 mois</h3>
+        <p class="case-text">Une PME de 12 salariés en BTP voulait <strong>équiper son équipe terrain</strong> sans immobiliser de capital. Nous avons configuré 8 Renault Trafic en LLD 48 mois — gestion, assurance et maintenance comprises. Un seul interlocuteur, un seul contrat.</p>
+        <div class="case-meta">
+          <span class="case-meta-item">
+            <span class="case-meta-label">Délai</span>
+            <span class="case-meta-value">4 semaines</span>
+          </span>
+          <span class="case-meta-divider"></span>
+          <span class="case-meta-item">
+            <span class="case-meta-label">Mode</span>
+            <span class="case-meta-value">LLD 48 mois</span>
+          </span>
+        </div>
+      </article>
+
+      <!-- CAS 3 - Atelier collection -->
+      <article class="case-card">
+        <div class="case-tag">Atelier · Collection</div>
+        <div class="case-stat">
+          <span class="case-stat-num">10<span class="case-stat-unit">jours</span></span>
+          <span class="case-stat-label">pour la pièce introuvable</span>
+        </div>
+        <h3 class="case-title">Calandre d'origine pour Citroën DS 1971</h3>
+        <p class="case-text">Un passionné restaurait sa <strong>Citroën DS 1971</strong> et bloquait depuis 8 mois sur une pièce de calandre d'origine. Notre réseau européen l'a localisée chez un partenaire belge — pièce NOS d'origine, livrée en 10 jours.</p>
+        <div class="case-meta">
+          <span class="case-meta-item">
+            <span class="case-meta-label">État</span>
+            <span class="case-meta-value">NOS d'origine</span>
+          </span>
+          <span class="case-meta-divider"></span>
+          <span class="case-meta-item">
+            <span class="case-meta-label">Origine</span>
+            <span class="case-meta-value">Belgique</span>
+          </span>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="cases-footer">
+      <p>Votre projet est unique — <a href="#contact" class="cases-link">parlons-en</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BANDEAU GARANTIES / RÉASSURANCE -->
+<section class="guarantees-section">
+  <div class="container">
+    <div class="guarantees-bar">
+      <div class="guarantee-item">
+        <div class="guarantee-icon">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 4L6 8v9c0 6 4.5 10 10 11 5.5-1 10-5 10-11V8l-10-4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            <path d="M11 16l3.5 3.5L22 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="guarantee-text">
+          <h4>Devis 100% gratuit</h4>
+          <p>Étude personnalisée, aucun frais caché.</p>
+        </div>
+      </div>
+
+      <div class="guarantee-divider"></div>
+
+      <div class="guarantee-item">
+        <div class="guarantee-icon">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="5" y="11" width="22" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M11 11V8a5 5 0 0110 0v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <circle cx="16" cy="18" r="1.8" fill="currentColor"/>
+          </svg>
+        </div>
+        <div class="guarantee-text">
+          <h4>Sans engagement</h4>
+          <p>Vous décidez après le devis.</p>
+        </div>
+      </div>
+
+      <div class="guarantee-divider"></div>
+
+      <div class="guarantee-item">
+        <div class="guarantee-icon">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="16" cy="16" r="11" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M16 9v7l4.5 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="guarantee-text">
+          <h4>Réponse 48h</h4>
+          <p>Garanti, jours ouvrés.</p>
+        </div>
+      </div>
+
+      <div class="guarantee-divider"></div>
+
+      <div class="guarantee-item">
+        <div class="guarantee-icon">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="9" width="24" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M4 14h24" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M9 20h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="guarantee-text">
+          <h4>Paiement sécurisé</h4>
+          <p>Versements échelonnés possibles.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL + FORMULAIRE -->
+<section class="cta-final-wrap" id="contact">
+  <div class="container">
+    <div class="cta-final">
+      <div class="cta-content">
+        <div class="section-label">Démarrer un projet</div>
+        <h2>Un seul interlocuteur pour <span class="accent">cinq univers.</span></h2>
+        <p>Décrivez votre besoin — véhicule unique, flotte d'entreprise, import sur-mesure ou pièce introuvable — nous revenons vers vous sous 48h.</p>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="form-name">Nom complet</label>
+              <input type="text" id="form-name" name="name" required placeholder="Jean Dupont">
+            </div>
+            <div class="form-field">
+              <label for="form-company">Société <span class="opt">(facultatif)</span></label>
+              <input type="text" id="form-company" name="company" placeholder="Nom de votre entreprise">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="form-email">Email</label>
+              <input type="email" id="form-email" name="email" required placeholder="vous@exemple.fr">
+            </div>
+            <div class="form-field">
+              <label for="form-phone">Téléphone</label>
+              <input type="tel" id="form-phone" name="phone" required placeholder="06 12 34 56 78">
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="form-subject">Votre besoin</label>
+            <select id="form-subject" name="subject" required>
+              <option value="">— Sélectionnez votre besoin —</option>
+              <option value="vente">Achat d'un véhicule (classique ou prestige)</option>
+              <option value="import">Import d'un véhicule depuis l'étranger</option>
+              <option value="particulier">Conseil particulier / accompagnement</option>
+              <option value="flotte">Flotte d'entreprise</option>
+              <option value="pieces">Pièces auto / collection vintage</option>
+              <option value="autre">Autre demande</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="form-message">Décrivez votre projet</label>
+            <textarea id="form-message" name="message" rows="5" required placeholder="Modèle recherché, budget approximatif, délais, contexte d'usage..."></textarea>
+          </div>
+
+          <div class="form-rgpd">
+            <input type="checkbox" id="form-rgpd" name="rgpd" required>
+            <label for="form-rgpd">J'accepte que mes données soient utilisées pour traiter ma demande. <a href="confidentialite.html" target="_blank">En savoir plus</a></label>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-primary">Envoyer ma demande →</button>
+            <div class="form-or">ou contactez-nous directement</div>
+            <div class="form-direct">
+              <a href="mailto:cohesifauto@gmail.com" class="form-link">cohesifauto@gmail.com</a>
+              <span class="form-sep">·</span>
+              <a href="tel:0760903774" class="form-link">07 60 90 37 74</a>
+            </div>
+          </div>
+
+          <div class="form-success" id="formSuccess">
+            <strong>✓ Demande envoyée</strong>
+            <p>Nous revenons vers vous sous 48h sur l'email indiqué. Pour les demandes urgentes, appelez-nous directement.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <img src="logo-cohesif-auto.png" alt="Cohesif Auto" class="logo-img">
+        </a>
+        <p>Le pôle Mobilité, Transport & Logistique Intégrée du Groupe Cohesif. Cinq univers, un seul interlocuteur.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Univers</h5>
+        <ul>
+          <li><a href="#contact" data-subject="vente">Vente prestige & classique</a></li>
+          <li><a href="#contact" data-subject="import">Import véhicules</a></li>
+          <li><a href="#contact" data-subject="particulier">Particuliers</a></li>
+          <li><a href="#contact" data-subject="flotte">Flottes pro</a></li>
+          <li><a href="#piecesauto">Pièces collection</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Groupe Cohesif</h5>
+        <ul>
+          <li><a href="https://cohesifbtp.fr" target="_blank" rel="noopener">Cohesif BTP</a></li>
+          <li><a href="https://cohesifaccess.fr" target="_blank" rel="noopener">Cohesif Access</a></li>
+          <li><a href="https://cohesifcommerce.fr" target="_blank" rel="noopener">Cohesif Commerce</a></li>
+          <li><span class="footer-soon" title="Bientôt disponible">Cohesif Energy <span class="soon-tag">Bientôt</span></span></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:cohesifauto@gmail.com">cohesifauto@gmail.com</a></li>
+          <li><a href="tel:0760903774">07 60 90 37 74</a></li>
+          <li><a href="#contact">Devis & rendez-vous</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 Cohesif Auto · Groupe Cohesif. Tous droits réservés.</div>
+      <div>
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="confidentialite.html">Confidentialité</a>
+        <a href="cgv.html">CGV</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js" defer></script>
+
+<!-- STICKY CTA MOBILE -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="#contact" class="sticky-btn sticky-btn-primary">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <path d="M3 3h7l3 3v7H3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+      <path d="M6 8h4M6 11h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    Devis gratuit
+  </a>
+  <a href="tel:0760903774" class="sticky-btn sticky-btn-secondary">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <path d="M3 3h3l1.5 3.5-2 1c1 2 2.5 3.5 4.5 4.5l1-2L14 11.5v3h-2C7 14.5 1.5 9 1.5 4V3h1.5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    </svg>
+    Appeler
+  </a>
+</div>
+
+</body>
+</html>

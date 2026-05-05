@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+<defs>
+<radialGradient id="bgv" cx="0.5" cy="0.4" r="0.7">
+<stop offset="0%" stop-color="#3d2818"/>
+<stop offset="100%" stop-color="#0a0806"/>
+</radialGradient>
+<linearGradient id="vintage" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#a87928"/>
+<stop offset="40%" stop-color="#704d18"/>
+<stop offset="100%" stop-color="#3d2818"/>
+</linearGradient>
+<linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#fff5e0"/>
+<stop offset="50%" stop-color="#c4a570"/>
+<stop offset="100%" stop-color="#704d18"/>
+</linearGradient>
+</defs>
+<rect width="800" height="600" fill="url(#bgv)"/>
+
+<!-- Effet vignette/ambiance -->
+<radialGradient id="vignette" cx="0.5" cy="0.5" r="0.6">
+<stop offset="0%" stop-color="black" stop-opacity="0"/>
+<stop offset="100%" stop-color="black" stop-opacity="0.5"/>
+</radialGradient>
+<rect width="800" height="600" fill="url(#vignette)"/>
+
+<!-- Lumières d'ambiance -->
+<circle cx="200" cy="100" r="80" fill="#a87928" opacity="0.15"/>
+<circle cx="600" cy="150" r="100" fill="#a87928" opacity="0.1"/>
+
+<!-- Voiture vintage profil -->
+<g transform="translate(80, 280)">
+<!-- Ombre -->
+<ellipse cx="320" cy="240" rx="320" ry="18" fill="black" opacity="0.7"/>
+
+<!-- Carrosserie classique avec courbes -->
+<path d="M 30 160 Q 50 120 100 110 L 170 105 Q 200 90 240 85 L 320 80 Q 380 75 420 85 Q 470 95 510 110 Q 560 125 600 145 Q 620 155 625 170 L 625 215 Q 620 225 605 228 L 30 228 Q 18 225 15 215 L 15 175 Q 18 165 30 160 Z" fill="url(#vintage)"/>
+
+<!-- Toit arrondi -->
+<path d="M 180 105 Q 210 65 270 60 Q 340 55 410 65 Q 460 75 480 110 L 470 135 L 200 135 Z" fill="#2d1c0a"/>
+
+<!-- Vitres rondes -->
+<path d="M 200 105 Q 220 75 270 70 Q 340 65 410 75 Q 450 85 470 110 L 462 130 L 210 130 Z" fill="#1a1410" opacity="0.85"/>
+
+<!-- Chrome détails (pare-chocs) -->
+<rect x="15" y="195" width="610" height="8" fill="url(#chrome)" opacity="0.7"/>
+<rect x="15" y="160" width="20" height="40" fill="url(#chrome)" opacity="0.6"/>
+
+<!-- Phares ronds vintage -->
+<circle cx="55" cy="170" r="20" fill="url(#chrome)"/>
+<circle cx="55" cy="170" r="14" fill="#fff8e0"/>
+<circle cx="55" cy="170" r="6" fill="#fff"/>
+
+<!-- Calandre -->
+<g transform="translate(35, 175)">
+<line x1="0" y1="0" x2="0" y2="20" stroke="url(#chrome)" stroke-width="1"/>
+<line x1="3" y1="0" x2="3" y2="20" stroke="url(#chrome)" stroke-width="1"/>
+<line x1="6" y1="0" x2="6" y2="20" stroke="url(#chrome)" stroke-width="1"/>
+<line x1="9" y1="0" x2="9" y2="20" stroke="url(#chrome)" stroke-width="1"/>
+</g>
+
+<!-- Phares arrière -->
+<circle cx="600" cy="175" r="10" fill="#c8102e" opacity="0.8"/>
+
+<!-- Roues à rayons -->
+<g transform="translate(140, 220)">
+<circle r="48" fill="#0a0806"/>
+<circle r="42" fill="url(#chrome)" opacity="0.4"/>
+<circle r="38" fill="#1a1410"/>
+<g stroke="url(#chrome)" stroke-width="1.5" opacity="0.7">
+<line x1="-32" y1="0" x2="32" y2="0"/>
+<line x1="0" y1="-32" x2="0" y2="32"/>
+<line x1="-23" y1="-23" x2="23" y2="23"/>
+<line x1="-23" y1="23" x2="23" y2="-23"/>
+</g>
+<circle r="8" fill="url(#chrome)"/>
+</g>
+
+<g transform="translate(490, 220)">
+<circle r="48" fill="#0a0806"/>
+<circle r="42" fill="url(#chrome)" opacity="0.4"/>
+<circle r="38" fill="#1a1410"/>
+<g stroke="url(#chrome)" stroke-width="1.5" opacity="0.7">
+<line x1="-32" y1="0" x2="32" y2="0"/>
+<line x1="0" y1="-32" x2="0" y2="32"/>
+<line x1="-23" y1="-23" x2="23" y2="23"/>
+<line x1="-23" y1="23" x2="23" y2="-23"/>
+</g>
+<circle r="8" fill="url(#chrome)"/>
+</g>
+
+<!-- Détails portières -->
+<path d="M 270 130 Q 270 180 270 220" stroke="rgba(0,0,0,0.4)" stroke-width="1.5"/>
+<path d="M 380 130 Q 380 180 380 220" stroke="rgba(0,0,0,0.4)" stroke-width="1.5"/>
+
+<!-- Reflet métallique haut -->
+<path d="M 50 120 Q 200 105 320 100 Q 440 105 560 130" stroke="rgba(255,245,224,0.3)" stroke-width="2" fill="none"/>
+</g>
+
+<text x="400" y="540" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" letter-spacing="6" fill="#a87928" opacity="0.8">ATELIER COLLECTION · 1965</text>
+</svg>
