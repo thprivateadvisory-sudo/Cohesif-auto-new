@@ -2381,10 +2381,6 @@ section {
   position: relative;
 }
 
-/* ===== AMÉLIORATION PHOTO HERO ===== */
-.hero-image-wrap::before {
-  display: none;
-}
 
 /* ===== HERO CTA ROW + TRUST ===== */
 .hero-cta-row {
