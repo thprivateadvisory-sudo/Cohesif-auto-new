@@ -1888,7 +1888,7 @@ footer {
 .cta-final .contact-form .form-field input,
 .cta-final .contact-form .form-field select,
 .cta-final .contact-form .form-field textarea {
-  background: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.05);
   border-color: rgba(255, 255, 255, 0.1);
   color: #fff;
 }
@@ -1902,14 +1902,14 @@ footer {
 .cta-final .contact-form .form-field select:hover,
 .cta-final .contact-form .form-field textarea:hover {
   border-color: rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.07);
+  background-color: rgba(255, 255, 255, 0.07);
 }
 
 .cta-final .contact-form .form-field input:focus,
 .cta-final .contact-form .form-field select:focus,
 .cta-final .contact-form .form-field textarea:focus {
   border-color: #4d7ab0;
-  background: rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.08);
   box-shadow: 0 0 0 3px rgba(77, 122, 176, 0.2);
 }
 
@@ -2047,10 +2047,10 @@ footer {
   line-height: 1.5;
 }
 
-.form-field input:invalid:not(:placeholder-shown),
-.form-field select:invalid:not([value=""]),
-.form-field textarea:invalid:not(:placeholder-shown) {
-  border-color: rgba(200, 16, 46, 0.3);
+.form-field input:user-invalid,
+.form-field select:user-invalid,
+.form-field textarea:user-invalid {
+  border-color: rgba(200, 16, 46, 0.45);
 }
 
 .form-rgpd {
