@@ -1856,26 +1856,6 @@ footer {
   margin-left: 1px;
 }
 
-.dashboard-stat-trend {
-  display: inline-block;
-  margin-top: 8px;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  padding: 2px 7px;
-  border-radius: 4px;
-}
-
-.dashboard-stat-trend.up {
-  background: rgba(40, 200, 64, 0.12);
-  color: #4ee079;
-}
-
-.dashboard-stat-trend.down {
-  background: rgba(255, 95, 87, 0.12);
-  color: #ff8b85;
-}
-
 /* ----- Chart ----- */
 .dashboard-chart-wrap {
   position: relative;
