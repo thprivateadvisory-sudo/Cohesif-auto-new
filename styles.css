@@ -287,26 +287,6 @@ header {
   animation: floatIn 0.8s 0.4s cubic-bezier(0.4, 0, 0.2, 1) backwards;
 }
 
-.floating-card-header {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.floating-stat-num {
-  color: #fff;
-}
-
-.floating-stat-num .pct {
-  color: #4d7ab0;
-}
-
-.floating-stat-label {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.floating-stat-sep {
-  background: rgba(255, 255, 255, 0.1);
-}
-
 @keyframes floatIn {
   from {
     opacity: 0;
@@ -327,7 +307,7 @@ header {
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .floating-card-dot {
@@ -361,7 +341,7 @@ header {
 .floating-stat-sep {
   width: 1px;
   height: 36px;
-  background: var(--line);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .floating-stat-num {
@@ -370,11 +350,11 @@ header {
   font-weight: 900;
   letter-spacing: -0.03em;
   line-height: 1;
-  color: var(--ink);
+  color: #fff;
 }
 
 .floating-stat-num .pct {
-  color: var(--accent);
+  color: #6d96cc;
   font-weight: 700;
 }
 
@@ -384,7 +364,7 @@ header {
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.08em;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.6);
   text-transform: uppercase;
 }
 
