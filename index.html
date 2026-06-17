@@ -256,10 +256,11 @@ header {
   inset: 0;
   border-radius: 20px;
   overflow: hidden;
+  border: 3px solid var(--accent);
   box-shadow:
-    0 32px 64px -24px rgba(26, 26, 26, 0.35),
-    0 12px 24px -8px rgba(26, 26, 26, 0.15),
-    0 0 0 1px rgba(26, 26, 26, 0.06);
+    0 32px 64px -24px rgba(30, 58, 95, 0.3),
+    0 12px 24px -8px rgba(30, 58, 95, 0.15),
+    0 0 0 4px rgba(30, 58, 95, 0.08);
 }
 
 .hero-image-wrap img {
@@ -268,6 +269,7 @@ header {
   object-fit: cover;
   display: block;
   transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: brightness(1.1) contrast(1.05);
 }
 
 .hero-visual:hover .hero-image-wrap img {
@@ -283,7 +285,18 @@ header {
 }
 
 .hero-image-wrap::before {
-  display: none;
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 30%,
+    rgba(0, 0, 0, 0.15) 60%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  pointer-events: none;
 }
 
 /* ===== HERO FLOATING CARD (stats) ===== */
@@ -292,37 +305,37 @@ header {
   bottom: 24px;
   left: 24px;
   right: 24px;
-  background: rgba(15, 23, 32, 0.7);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(30, 58, 95, 0.12);
   border-radius: 14px;
   padding: 20px 24px;
   box-shadow:
-    0 16px 40px -12px rgba(0, 0, 0, 0.4),
-    0 1px 0 rgba(255, 255, 255, 0.06) inset;
+    0 16px 40px -12px rgba(0, 0, 0, 0.2),
+    0 4px 12px -4px rgba(30, 58, 95, 0.1);
   z-index: 2;
   animation: floatIn 0.8s 0.4s cubic-bezier(0.4, 0, 0.2, 1) backwards;
 }
 
 .floating-card-header {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--muted);
 }
 
 .floating-stat-num {
-  color: #fff;
+  color: var(--ink);
 }
 
 .floating-stat-num .pct {
-  color: #4d7ab0;
+  color: var(--accent);
 }
 
 .floating-stat-label {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--muted);
 }
 
 .floating-stat-sep {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--line);
 }
 
 @keyframes floatIn {
@@ -414,47 +427,47 @@ header {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: rgba(15, 23, 32, 0.8);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #fff;
+  border: 1px solid rgba(30, 58, 95, 0.12);
+  color: var(--ink);
   padding: 10px 16px 10px 12px;
   border-radius: 999px;
   box-shadow:
-    0 12px 32px -8px rgba(0, 0, 0, 0.4),
-    0 1px 0 rgba(255, 255, 255, 0.06) inset;
+    0 12px 32px -8px rgba(0, 0, 0, 0.15),
+    0 4px 8px -2px rgba(30, 58, 95, 0.08);
   z-index: 2;
   animation: floatIn 0.8s 0.6s cubic-bezier(0.4, 0, 0.2, 1) backwards;
 }
 
 .badge-tag-icon {
-  width: 22px;
-  height: 22px;
-  background: rgba(77, 122, 176, 0.2);
-  border: 1px solid rgba(77, 122, 176, 0.4);
+  width: 26px;
+  height: 26px;
+  background: var(--accent);
+  border: none;
   border-radius: 50%;
   display: grid;
   place-items: center;
   font-size: 11px;
-  color: #a8c8e8;
+  color: #fff;
   flex-shrink: 0;
 }
 
 .badge-tag-num {
   display: block;
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 800;
   line-height: 1.1;
-  letter-spacing: 0;
-  color: #fff;
+  letter-spacing: -0.01em;
+  color: var(--ink);
 }
 
 .badge-tag-label {
   display: block;
   font-size: 9px;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+  color: var(--muted);
   letter-spacing: 0.08em;
   margin-top: 2px;
   text-transform: uppercase;
@@ -468,8 +481,10 @@ header {
   .badge-tag-num { font-size: 12px; }
   .badge-tag-label { font-size: 9px; }
 
-  .hero-floating-card { padding: 14px 16px; bottom: 16px; left: 16px; right: 16px; }
-  .floating-stat-num { font-size: 1.4rem; }
+  .hero-floating-card { padding: 16px 18px; bottom: 16px; left: 16px; right: 16px; }
+  .floating-stat-num { font-size: 1.3rem; }
+  .hero-badge-tag { top: 16px; right: 16px; padding: 8px 12px 8px 8px; }
+  .badge-tag-icon { width: 22px; height: 22px; font-size: 10px; }
 }
 
 .eyebrow {
@@ -2556,7 +2571,18 @@ section {
 
 /* ===== AMÉLIORATION PHOTO HERO ===== */
 .hero-image-wrap::before {
-  display: none;
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 30%,
+    rgba(0, 0, 0, 0.15) 60%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  pointer-events: none;
 }
 
 /* ===== HERO CTA ROW + TRUST ===== */
