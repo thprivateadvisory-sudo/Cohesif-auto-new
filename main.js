@@ -217,3 +217,34 @@
     // État initial
     updateStickyCta();
   }
+
+  // ===== STATS DYNAMIQUES HERO (disponibilité + délai) =====
+  const floatingStats = document.querySelectorAll('.hero-floating-card .floating-stat-num');
+  if (floatingStats.length >= 2) {
+    const dispoEl = floatingStats[0];
+    const delaiEl = floatingStats[1];
+
+    const dispoValues = [96, 97, 98, 99, 97, 98, 99, 98];
+    const delaiValues = [24, 48, 24, 36, 48, 24, 48, 24];
+    let idx = 0;
+
+    const updateLiveStats = () => {
+      idx = (idx + 1) % dispoValues.length;
+      const newDispo = dispoValues[idx];
+      const newDelai = delaiValues[idx];
+
+      dispoEl.style.transition = 'opacity 0.4s ease';
+      delaiEl.style.transition = 'opacity 0.4s ease';
+      dispoEl.style.opacity = '0';
+      delaiEl.style.opacity = '0';
+
+      setTimeout(() => {
+        dispoEl.childNodes[0].textContent = newDispo;
+        delaiEl.childNodes[0].textContent = newDelai;
+        dispoEl.style.opacity = '1';
+        delaiEl.style.opacity = '1';
+      }, 400);
+    };
+
+    setInterval(updateLiveStats, 5000 + Math.random() * 3000);
+  }
