@@ -1,4 +1,7 @@
+# Cohesif Auto - cohesifauto.fr
 User-agent: *
 Allow: /
+Disallow: /favicon-preview.html
 
+# Sitemap
 Sitemap: https://cohesifauto.fr/sitemap.xml
