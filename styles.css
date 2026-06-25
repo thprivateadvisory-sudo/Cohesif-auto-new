@@ -1685,7 +1685,6 @@ footer {
 .footer-bottom a:hover { color: #4d7ab0; }
 
 footer .logo { color: #fff; }
-footer .logo-img { filter: brightness(0) invert(1); opacity: 0.95; }
 footer .logo-tag { color: rgba(255, 255, 255, 0.5); }
 footer .logo-name span { color: #4d7ab0; }
 footer .logo-mark { background: #fff; }
