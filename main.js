@@ -130,49 +130,66 @@
   // ===== SOUMISSION DU FORMULAIRE =====
   const form = document.getElementById('contactForm');
   const successMsg = document.getElementById('formSuccess');
+  const submitBtn = form ? form.querySelector('button[type="submit"]') : null;
 
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      // Validation simple
       if (!form.checkValidity()) {
         form.reportValidity();
         return;
       }
 
-      // Récupération des données
       const data = {
         nom: form.name.value,
-        societe: form.company.value,
+        societe: form.company.value || '—',
         email: form.email.value,
         telephone: form.phone.value,
         sujet: form.subject.options[form.subject.selectedIndex].text,
         message: form.message.value
       };
 
-      // Construire le mail avec les données
-      const subject = encodeURIComponent(`[Cohesif Auto] Demande - ${data.sujet}`);
-      const body = encodeURIComponent(
-        `Nom : ${data.nom}\n` +
-        `Société : ${data.societe || '—'}\n` +
-        `Email : ${data.email}\n` +
-        `Téléphone : ${data.telephone}\n` +
-        `Sujet : ${data.sujet}\n\n` +
-        `Message :\n${data.message}`
-      );
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Envoi en cours…';
+      }
 
-      // Ouvre le client mail avec tout pré-rempli
-      window.location.href = `mailto:cohesifauto@gmail.com?subject=${subject}&body=${body}`;
+      try {
+        const resp = await fetch('https://formspree.io/f/xblwjrpk', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            name: data.nom,
+            company: data.societe,
+            email: data.email,
+            phone: data.telephone,
+            subject: data.sujet,
+            message: data.message,
+            _subject: `[Cohesif Auto] ${data.sujet} — ${data.nom}`
+          })
+        });
 
-      // Affiche le message de confirmation
-      successMsg.classList.add('visible');
-      successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-      // Reset du formulaire après 1s
-      setTimeout(() => {
-        form.reset();
-      }, 1000);
+        if (resp.ok) {
+          successMsg.classList.add('visible');
+          successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          setTimeout(() => { form.reset(); }, 800);
+        } else {
+          throw new Error('Formspree error');
+        }
+      } catch {
+        // Fallback: ouvre le client mail si l'envoi échoue
+        const subject = encodeURIComponent(`[Cohesif Auto] ${data.sujet} — ${data.nom}`);
+        const body = encodeURIComponent(
+          `Nom : ${data.nom}\nSociété : ${data.societe}\nEmail : ${data.email}\nTéléphone : ${data.telephone}\nSujet : ${data.sujet}\n\nMessage :\n${data.message}`
+        );
+        window.location.href = `mailto:cohesifauto@gmail.com?subject=${subject}&body=${body}`;
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Envoyer ma demande →';
+        }
+      }
     });
   }
 
@@ -218,33 +235,3 @@
     updateStickyCta();
   }
 
-  // ===== STATS DYNAMIQUES HERO (disponibilité + délai) =====
-  const floatingStats = document.querySelectorAll('.hero-floating-card .floating-stat-num');
-  if (floatingStats.length >= 2) {
-    const dispoEl = floatingStats[0];
-    const delaiEl = floatingStats[1];
-
-    const dispoValues = [96, 97, 98, 99, 97, 98, 99, 98];
-    const delaiValues = [24, 48, 24, 36, 48, 24, 48, 24];
-    let idx = 0;
-
-    const updateLiveStats = () => {
-      idx = (idx + 1) % dispoValues.length;
-      const newDispo = dispoValues[idx];
-      const newDelai = delaiValues[idx];
-
-      dispoEl.style.transition = 'opacity 0.4s ease';
-      delaiEl.style.transition = 'opacity 0.4s ease';
-      dispoEl.style.opacity = '0';
-      delaiEl.style.opacity = '0';
-
-      setTimeout(() => {
-        dispoEl.childNodes[0].textContent = newDispo;
-        delaiEl.childNodes[0].textContent = newDelai;
-        dispoEl.style.opacity = '1';
-        delaiEl.style.opacity = '1';
-      }, 400);
-    };
-
-    setInterval(updateLiveStats, 5000 + Math.random() * 3000);
-  }
