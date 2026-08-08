@@ -172,12 +172,30 @@ header {
 .nav-cta .cta-full { display: inline; }
 .nav-cta .cta-short { display: none; }
 
+.nav-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.nav-phone:hover {
+  color: var(--accent-light);
+}
+
 @media (max-width: 720px) {
   .nav-cta { padding: 10px 18px; font-size: 13px; }
   .nav-cta .cta-full { display: none; }
   .nav-cta .cta-short { display: inline; }
   .logo-img { height: 36px; }
   .nav { gap: 12px; }
+  .nav-phone { display: none; }
 }
 
 @media (max-width: 380px) {
@@ -1745,119 +1763,38 @@ footer .footer-soon { opacity: 0.4; }
 }
 
 /* ===== MOCKUP DASHBOARD ===== */
-.dashboard-mockup {
+/* ===== FLEET BENEFITS (remplace le faux dashboard) ===== */
+.fleet-benefits {
   width: calc(100% + 80px);
   margin: -44px -40px 28px -40px;
   background: linear-gradient(135deg, #1a2433 0%, #0f1720 100%);
-  padding: 24px 24px 28px;
-  position: relative;
-  overflow: hidden;
+  padding: 24px 28px 28px;
   border-radius: 18px 18px 0 0;
   color: #fff;
 }
 
-.dashboard-mockup::before {
-  content: "";
-  position: absolute;
-  top: -30%;
-  right: -20%;
-  width: 60%;
-  height: 160%;
-  background: radial-gradient(circle, rgba(30, 58, 95, 0.5) 0%, transparent 60%);
-}
-
-.dashboard-header {
+.fleet-benefit-item {
   display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 20px;
-  position: relative;
-  z-index: 1;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  font-size: 13.5px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.4;
 }
 
-.dashboard-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.18);
+.fleet-benefit-item:last-child {
+  border-bottom: none;
 }
 
-.dashboard-dot:nth-child(1) { background: #ff5f57; }
-.dashboard-dot:nth-child(2) { background: #ffbd2e; }
-.dashboard-dot:nth-child(3) { background: #28c840; }
-
-.dashboard-title {
-  margin-left: 12px;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.6);
-  text-transform: uppercase;
-}
-
-.dashboard-stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-bottom: 20px;
-  position: relative;
-  z-index: 1;
-}
-
-.dashboard-stat {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 10px;
-  padding: 14px 14px 12px;
-}
-
-.dashboard-stat-num {
-  display: block;
-  font-size: 1.6rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  color: #fff;
-  line-height: 1;
-}
-
-.dashboard-stat-num .pct {
-  color: var(--accent-light);
-  font-weight: 600;
-}
-
-.dashboard-stat-label {
-  display: block;
-  margin-top: 6px;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  color: rgba(255, 255, 255, 0.5);
-  text-transform: uppercase;
-}
-
-.dashboard-chart {
-  display: flex;
-  align-items: flex-end;
-  gap: 6px;
-  height: 60px;
-  position: relative;
-  z-index: 1;
-}
-
-.dashboard-chart .bar {
-  flex: 1;
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: 3px 3px 0 0;
-  transition: background 0.3s ease;
-}
-
-.dashboard-chart .bar.active {
-  background: var(--accent-light);
-  box-shadow: 0 0 12px rgba(42, 77, 122, 0.5);
-}
-
-.univers:hover .dashboard-chart .bar:not(.active) {
-  background: rgba(255, 255, 255, 0.18);
+.fleet-check {
+  color: #2d7a4f;
+  font-weight: 700;
+  font-size: 15px;
+  flex-shrink: 0;
+  line-height: 1.4;
 }
 
 /* ===== PHOTO VINTAGE COLLECTION ===== */
@@ -2213,6 +2150,17 @@ footer .footer-soon { opacity: 0.4; }
 .form-link:hover {
   color: var(--accent-light);
   text-decoration: underline;
+}
+
+.form-link-phone {
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--green) !important;
+}
+
+.form-link-phone:hover {
+  color: #1f5c3a !important;
 }
 
 .form-sep {
