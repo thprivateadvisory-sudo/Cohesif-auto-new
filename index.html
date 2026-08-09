@@ -32,25 +32,25 @@
 <style>
 :root {
   color-scheme: light only;
-  --bg: #f4f5f7;
-  --bg-soft: #eaecef;
-  --bg-tint: #f9fafb;
+  --bg: #ffffff;
+  --bg-soft: #f4f6f9;
+  --bg-tint: #f8fafc;
   --bg-card: #ffffff;
-  --bg-cream: #f9fafb;
-  --bg-dark: #0b0f1a;
+  --bg-cream: #f8fafc;
+  --bg-dark: #07090f;
   --bg-mesh: radial-gradient(at 20% 0%, rgba(30, 58, 95, 0.03) 0px, transparent 50%),
               radial-gradient(at 80% 100%, rgba(139, 90, 43, 0.03) 0px, transparent 50%);
-  --ink: #0f172a;
-  --ink-soft: #1e293b;
-  --muted: #64748b;
-  --muted-soft: #94a3b8;
-  --line: rgba(26, 26, 26, 0.07);
-  --line-strong: rgba(26, 26, 26, 0.12);
-  --accent: #163468;
-  --accent-light: #1a56db;
-  --accent-soft: rgba(22, 52, 104, 0.07);
-  --accent-medium: rgba(22, 52, 104, 0.12);
-  --accent-glow: rgba(22, 52, 104, 0.2);
+  --ink: #07090f;
+  --ink-soft: #18212e;
+  --muted: #5c6b82;
+  --muted-soft: #8fa0b8;
+  --line: rgba(7, 9, 15, 0.06);
+  --line-strong: rgba(7, 9, 15, 0.10);
+  --accent: #1a3ecf;
+  --accent-light: #2352f0;
+  --accent-soft: rgba(26, 62, 207, 0.06);
+  --accent-medium: rgba(26, 62, 207, 0.10);
+  --accent-glow: rgba(26, 62, 207, 0.18);
   --warm: #c4921f;
   --warm-soft: rgba(196, 146, 31, 0.08);
   --warm-medium: rgba(196, 146, 31, 0.15);
@@ -69,8 +69,8 @@ html { scroll-behavior: smooth; }
 
 /* FORCE LIGHT MODE - bloque toute inversion */
 html, body {
-  background-color: #f4f5f7 !important;
-  color: #0f172a !important;
+  background-color: #ffffff !important;
+  color: #07090f !important;
   forced-color-adjust: none !important;
   -webkit-forced-color-adjust: none !important;
   color-scheme: light only !important;
@@ -78,11 +78,11 @@ html, body {
 
 @media (prefers-color-scheme: dark) {
   html, body {
-    background-color: #f4f5f7 !important;
-    color: #0f172a !important;
+    background-color: #ffffff !important;
+    color: #07090f !important;
   }
   :root {
-    --bg: #f4f5f7 !important;
+    --bg: #ffffff !important;
     --bg-soft: #eaecef !important;
     --bg-card: #ffffff !important;
     --ink: #0f172a !important;
@@ -180,14 +180,14 @@ header {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 13px 24px;
+  padding: 12px 22px;
   background: var(--accent);
   color: #fff;
   text-decoration: none;
-  border-radius: 999px;
+  border-radius: 8px;
   font-weight: 600;
   font-size: 14px;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
   border: 1px solid var(--accent);
   white-space: nowrap;
   flex-shrink: 0;
@@ -243,8 +243,8 @@ header {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 64px;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
   align-items: center;
 }
 
@@ -259,63 +259,18 @@ header {
 
 /* ===== HERO VISUAL ===== */
 .hero-visual {
-  position: relative;
-  height: 600px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
 }
 
-@media (max-width: 980px) {
-  .hero-visual { height: 460px; }
-}
-
-@media (max-width: 600px) {
-  .hero-visual { height: 380px; }
-}
-
-.hero-image-wrap {
-  position: absolute;
-  inset: 0;
-  border-radius: 20px;
-  overflow: hidden;
-  border: 3px solid var(--accent);
-  box-shadow:
-    0 32px 64px -24px rgba(30, 58, 95, 0.3),
-    0 12px 24px -8px rgba(30, 58, 95, 0.15),
-    0 0 0 4px rgba(30, 58, 95, 0.08);
-}
-
-.hero-image-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-  filter: brightness(1.1) contrast(1.05);
-}
-
-.hero-visual:hover .hero-image-wrap img {
-  transform: scale(1.04);
-}
-
-.hero-image-overlay {
-  display: none;
-}
-
-.hero-grid-pattern {
-  display: none;
+@media (max-width: 720px) {
+  .hero-visual { display: none; }
 }
 
 .hero-image-wrap::before {
   content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0) 30%,
-    rgba(0, 0, 0, 0.15) 60%,
-    rgba(0, 0, 0, 0.4) 100%
-  );
+  display: none;
   pointer-events: none;
 }
 
@@ -1575,46 +1530,48 @@ section { padding: 110px 0; }
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 18px 32px;
+  padding: 17px 32px;
   background: var(--accent);
   color: #fff;
   text-decoration: none;
-  border-radius: 999px;
+  border-radius: 10px;
   font-weight: 700;
   font-size: 15px;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
   letter-spacing: 0.01em;
   border: 1px solid var(--accent);
-  box-shadow: 0 6px 16px -4px rgba(30, 58, 95, 0.35);
+  box-shadow: 0 4px 20px rgba(26, 62, 207, 0.22);
 }
 
 .btn-primary:hover {
   background: var(--accent-light);
   border-color: var(--accent-light);
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px -8px rgba(30, 58, 95, 0.5);
+  box-shadow: 0 8px 24px rgba(26, 62, 207, 0.35);
 }
 
 .btn-secondary {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 18px 32px;
+  padding: 15px 30px;
   background: transparent;
   color: var(--accent);
   text-decoration: none;
-  border-radius: 999px;
+  border-radius: 10px;
   font-weight: 700;
   font-size: 15px;
   border: 2px solid var(--accent);
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
   letter-spacing: 0.01em;
 }
 
 .btn-secondary:hover {
+  background: var(--accent);
+  color: #fff;
   border-color: var(--accent);
-  background: var(--accent-soft);
   transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(26, 62, 207, 0.25);
 }
 
 @media (max-width: 720px) {
@@ -3236,6 +3193,267 @@ section {
 .fade-in:nth-child(3) { transition-delay: 0.12s; }
 .fade-in:nth-child(4) { transition-delay: 0.18s; }
 .fade-in:nth-child(5) { transition-delay: 0.24s; }
+
+/* ===== HERO PANEL EDITORIAL ===== */
+.hero-visual {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.hero-panel {
+  background: #07090f;
+  border-radius: 20px;
+  padding: 32px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 32px 64px -16px rgba(7, 9, 15, 0.3);
+}
+
+.hero-panel-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.hero-panel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #0f9b5e;
+  box-shadow: 0 0 8px rgba(15, 155, 94, 0.6);
+  flex-shrink: 0;
+}
+
+.hero-panel-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: rgba(255,255,255,0.45);
+  text-transform: uppercase;
+}
+
+.hero-panel-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 28px;
+}
+
+.hero-panel-list li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 13px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.hero-panel-list li:last-child {
+  border-bottom: none;
+}
+
+.hero-panel-num {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.22);
+  flex-shrink: 0;
+  width: 22px;
+}
+
+.hero-panel-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hero-panel-item strong {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.hero-panel-item span {
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+  font-weight: 400;
+}
+
+.hero-panel-stats {
+  display: flex;
+  align-items: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.hero-panel-stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  text-align: center;
+}
+
+.hero-panel-stat strong {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.hero-panel-stat span {
+  font-size: 10px;
+  color: rgba(255,255,255,0.4);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.hero-panel-stat-sep {
+  width: 1px;
+  height: 36px;
+  background: rgba(255,255,255,0.08);
+  flex-shrink: 0;
+}
+
+@media (max-width: 980px) {
+  .hero-panel { max-width: 100%; }
+}
+
+@media (max-width: 720px) {
+  .hero-visual { display: none; }
+}
+
+/* ===== TÉMOIGNAGES CLIENTS ===== */
+.testimonials-section {
+  padding: 100px 0 80px;
+  background: var(--bg);
+}
+
+.section-header-centered {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 60px;
+}
+
+.section-header-centered .section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.section-header-centered h2 {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.section-header-centered .section-sub {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.testimonial-card {
+  background: var(--bg-card);
+  border-radius: 18px;
+  padding: 32px 28px;
+  border: 1px solid var(--line);
+  box-shadow: 0 2px 12px rgba(7, 9, 15, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(26, 62, 207, 0.10), 0 2px 6px rgba(7, 9, 15, 0.05);
+}
+
+.testimonial-stars {
+  color: #f59e0b;
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+.testimonial-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  flex: 1;
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.testimonial-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: 0.05em;
+}
+
+.testimonial-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.testimonial-info strong {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.testimonial-info span {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+@media (max-width: 980px) {
+  .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .testimonials-section { padding: 60px 0 50px; }
+  .testimonials-grid { grid-template-columns: 1fr; gap: 16px; }
+  .testimonial-card { padding: 24px 20px; }
+}
 </style>
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-auto.png" />
   <link rel="apple-touch-icon" href="./favicon-auto.png" />
@@ -3351,8 +3569,8 @@ section {
           <span class="eyebrow-pulse"></span>
           Groupe Cohesif — Pôle Automobile · France &amp; Europe
         </div>
-        <h1>Votre prochain véhicule, sans le <span class="accent">parcours du combattant.</span></h1>
-        <p class="lead">Achat, import, flotte ou pièce rare — on s'occupe de tout. Vous gagnez du temps, vous économisez sur le prix, et vous récupérez les clés. Devis gratuit sous 48h, sans engagement.</p>
+        <h1>Votre prochain véhicule,<br><span class="accent">sans la galère.</span></h1>
+        <p class="lead">Achat, import, flotte ou pièce rare — du brief à la livraison, Cohesif Auto prend tout en charge. Devis gratuit sous 48h, sans engagement.</p>
 
         <div class="hero-cta-row">
           <a href="#contact" class="btn-primary btn-large">Obtenir mon devis gratuit →</a>
@@ -3380,35 +3598,63 @@ section {
       </div>
 
       <div class="hero-visual">
-        <div class="hero-image-wrap">
-          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDE0MDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIHNsaWNlIj4KPGRlZnM+CjwhLS0gRm9uZCBwcm9mb25kIGF2ZWMgZMOpZ3JhZMOpcyBtdWx0aXBsZXMgLS0+CjxsaW5lYXJHcmFkaWVudCBpZD0iYmdNYWluIiB4MT0iMCIgeTE9IjAiIHgyPSIwIiB5Mj0iMSI+CjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMxYTI5NDAiLz4KPHN0b3Agb2Zmc2V0PSI0MCUiIHN0b3AtY29sb3I9IiMxNTIzM2EiLz4KPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMGExNTI1Ii8+CjwvbGluZWFyR3JhZGllbnQ+Cgo8IS0tIEhhbG8gcHJpbmNpcGFsIGVuIGhhdXQgLS0+CjxyYWRpYWxHcmFkaWVudCBpZD0iaGFsb1RvcCIgY3g9IjAuNSIgY3k9IjAuMTUiIHI9IjAuNSI+CjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiM0ZDdhYjAiIHN0b3Atb3BhY2l0eT0iMC40Ii8+CjxzdG9wIG9mZnNldD0iNDAlIiBzdG9wLWNvbG9yPSIjMmE0ZDdhIiBzdG9wLW9wYWNpdHk9IjAuMiIvPgo8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyYTRkN2EiIHN0b3Atb3BhY2l0eT0iMCIvPgo8L3JhZGlhbEdyYWRpZW50PgoKPCEtLSBMdWV1ciBzZWNvbmRhaXJlIGVuIGJhcyAtLT4KPHJhZGlhbEdyYWRpZW50IGlkPSJoYWxvQm90dG9tIiBjeD0iMC43IiBjeT0iMC44NSIgcj0iMC42Ij4KPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzFlM2E1ZiIgc3RvcC1vcGFjaXR5PSIwLjUiLz4KPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMWUzYTVmIiBzdG9wLW9wYWNpdHk9IjAiLz4KPC9yYWRpYWxHcmFkaWVudD4KCjwhLS0gTHVldXIgZGUgZ2F1Y2hlIC0tPgo8cmFkaWFsR3JhZGllbnQgaWQ9ImhhbG9MZWZ0IiBjeD0iMC4xNSIgY3k9IjAuNiIgcj0iMC40Ij4KPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzRkN2FiMCIgc3RvcC1vcGFjaXR5PSIwLjI1Ii8+CjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzRkN2FiMCIgc3RvcC1vcGFjaXR5PSIwIi8+CjwvcmFkaWFsR3JhZGllbnQ+Cgo8IS0tIFBhdHRlcm4gZ3JpbGxlIHRlY2huaXF1ZSAtLT4KPHBhdHRlcm4gaWQ9InRlY2hHcmlkIiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPgo8cGF0aCBkPSJNIDYwIDAgTCAwIDAgMCA2MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDQpIiBzdHJva2Utd2lkdGg9IjEiLz4KPGNpcmNsZSBjeD0iMCIgY3k9IjAiIHI9IjEiIGZpbGw9InJnYmEoNzcsMTIyLDE3NiwwLjQpIi8+CjwvcGF0dGVybj4KCjwhLS0gUGF0dGVybiBncmlsbGUgZmluZSAtLT4KPHBhdHRlcm4gaWQ9ImZpbmVHcmlkIiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPgo8cGF0aCBkPSJNIDIwIDAgTCAwIDAgMCAyMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDE1KSIgc3Ryb2tlLXdpZHRoPSIwLjUiLz4KPC9wYXR0ZXJuPgoKPCEtLSBHcmFkaWVudCBwb3VyIGxlcyBsaWduZXMgLS0+CjxsaW5lYXJHcmFkaWVudCBpZD0ibGluZUdsb3ciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIwIj4KPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzRkN2FiMCIgc3RvcC1vcGFjaXR5PSIwIi8+CjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjNGQ3YWIwIiBzdG9wLW9wYWNpdHk9IjAuNyIvPgo8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM0ZDdhYjAiIHN0b3Atb3BhY2l0eT0iMCIvPgo8L2xpbmVhckdyYWRpZW50PgoKPGxpbmVhckdyYWRpZW50IGlkPSJsaW5lVmVydCIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPgo8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjNGQ3YWIwIiBzdG9wLW9wYWNpdHk9IjAiLz4KPHN0b3Agb2Zmc2V0PSI1MCUiIHN0b3AtY29sb3I9IiM0ZDdhYjAiIHN0b3Atb3BhY2l0eT0iMC41Ii8+CjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzRkN2FiMCIgc3RvcC1vcGFjaXR5PSIwIi8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KCjwhLS0gQ291Y2hlcyBkZSBmb25kIC0tPgo8cmVjdCB3aWR0aD0iMTIwMCIgaGVpZ2h0PSIxNDAwIiBmaWxsPSJ1cmwoI2JnTWFpbikiLz4KPHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iMTQwMCIgZmlsbD0idXJsKCNmaW5lR3JpZCkiLz4KPHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iMTQwMCIgZmlsbD0idXJsKCN0ZWNoR3JpZCkiLz4KPHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iMTQwMCIgZmlsbD0idXJsKCNoYWxvVG9wKSIvPgo8cmVjdCB3aWR0aD0iMTIwMCIgaGVpZ2h0PSIxNDAwIiBmaWxsPSJ1cmwoI2hhbG9Cb3R0b20pIi8+CjxyZWN0IHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjE0MDAiIGZpbGw9InVybCgjaGFsb0xlZnQpIi8+Cgo8IS0tIExpZ25lcyBob3Jpem9udGFsZXMgbHVtaW5ldXNlcyAoZWZmZXQgImhpZ2h3YXkvY2lyY3VpdCIpIC0tPgo8bGluZSB4MT0iMCIgeTE9IjM1MCIgeDI9IjEyMDAiIHkyPSIzNTAiIHN0cm9rZT0idXJsKCNsaW5lR2xvdykiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC42Ii8+CjxsaW5lIHgxPSIwIiB5MT0iNTAwIiB4Mj0iMTIwMCIgeTI9IjUwMCIgc3Ryb2tlPSJ1cmwoI2xpbmVHbG93KSIgc3Ryb2tlLXdpZHRoPSIwLjUiIG9wYWNpdHk9IjAuNCIvPgo8bGluZSB4MT0iMCIgeTE9IjcwMCIgeDI9IjEyMDAiIHkyPSI3MDAiIHN0cm9rZT0idXJsKCNsaW5lR2xvdykiIHN0cm9rZS13aWR0aD0iMS41IiBvcGFjaXR5PSIwLjciLz4KPGxpbmUgeDE9IjAiIHkxPSI5MDAiIHgyPSIxMjAwIiB5Mj0iOTAwIiBzdHJva2U9InVybCgjbGluZUdsb3cpIiBzdHJva2Utd2lkdGg9IjAuNSIgb3BhY2l0eT0iMC40Ii8+CjxsaW5lIHgxPSIwIiB5MT0iMTEwMCIgeDI9IjEyMDAiIHkyPSIxMTAwIiBzdHJva2U9InVybCgjbGluZUdsb3cpIiBzdHJva2Utd2lkdGg9IjEiIG9wYWNpdHk9IjAuNSIvPgoKPCEtLSBMaWduZXMgdmVydGljYWxlcyAtLT4KPGxpbmUgeDE9IjIwMCIgeTE9IjAiIHgyPSIyMDAiIHkyPSIxNDAwIiBzdHJva2U9InVybCgjbGluZVZlcnQpIiBzdHJva2Utd2lkdGg9IjAuNSIgb3BhY2l0eT0iMC4zIi8+CjxsaW5lIHgxPSI2MDAiIHkxPSIwIiB4Mj0iNjAwIiB5Mj0iMTQwMCIgc3Ryb2tlPSJ1cmwoI2xpbmVWZXJ0KSIgc3Ryb2tlLXdpZHRoPSIxIiBvcGFjaXR5PSIwLjQiLz4KPGxpbmUgeDE9IjEwMDAiIHkxPSIwIiB4Mj0iMTAwMCIgeTI9IjE0MDAiIHN0cm9rZT0idXJsKCNsaW5lVmVydCkiIHN0cm9rZS13aWR0aD0iMC41IiBvcGFjaXR5PSIwLjMiLz4KCjwhLS0gQ2VyY2xlcyBjb25jZW50cmlxdWVzIChyYWRhci9yw6lzZWF1KSAtLT4KPGcgb3BhY2l0eT0iMC40IiBzdHJva2U9InJnYmEoNzcsMTIyLDE3NiwwLjUpIiBmaWxsPSJub25lIj4KPGNpcmNsZSBjeD0iNjAwIiBjeT0iNzAwIiByPSIyMDAiIHN0cm9rZS13aWR0aD0iMC41Ii8+CjxjaXJjbGUgY3g9IjYwMCIgY3k9IjcwMCIgcj0iMzUwIiBzdHJva2Utd2lkdGg9IjAuMyIvPgo8Y2lyY2xlIGN4PSI2MDAiIGN5PSI3MDAiIHI9IjUwMCIgc3Ryb2tlLXdpZHRoPSIwLjUiLz4KPGNpcmNsZSBjeD0iNjAwIiBjeT0iNzAwIiByPSI2NTAiIHN0cm9rZS13aWR0aD0iMC4zIi8+CjwvZz4KCjwhLS0gUG9pbnQgY2VudHJhbCBsdW1pbmV1eCAtLT4KPGNpcmNsZSBjeD0iNjAwIiBjeT0iNzAwIiByPSI2IiBmaWxsPSIjNGQ3YWIwIi8+CjxjaXJjbGUgY3g9IjYwMCIgY3k9IjcwMCIgcj0iMTQiIGZpbGw9IiM0ZDdhYjAiIG9wYWNpdHk9IjAuNCIvPgo8Y2lyY2xlIGN4PSI2MDAiIGN5PSI3MDAiIHI9IjI4IiBmaWxsPSIjNGQ3YWIwIiBvcGFjaXR5PSIwLjE1Ii8+Cgo8IS0tIMOJdG9pbGVzL3BvaW50cyBsdW1pbmV1eCBkaXNwZXJzw6lzIC0tPgo8ZyBmaWxsPSIjYThjOGU4Ij4KPGNpcmNsZSBjeD0iMTIwIiBjeT0iMTgwIiByPSIxLjUiIG9wYWNpdHk9IjAuOCIvPgo8Y2lyY2xlIGN4PSIyODAiIGN5PSIxMjAiIHI9IjEiIG9wYWNpdHk9IjAuNSIvPgo8Y2lyY2xlIGN4PSI0NTAiIGN5PSIyNDAiIHI9IjEuMiIgb3BhY2l0eT0iMC42Ii8+CjxjaXJjbGUgY3g9Ijc4MCIgY3k9IjE2MCIgcj0iMSIgb3BhY2l0eT0iMC40Ii8+CjxjaXJjbGUgY3g9Ijk1MCIgY3k9IjI4MCIgcj0iMS41IiBvcGFjaXR5PSIwLjciLz4KPGNpcmNsZSBjeD0iMTA4MCIgY3k9IjEyMCIgcj0iMSIgb3BhY2l0eT0iMC41Ii8+CjxjaXJjbGUgY3g9IjE4MCIgY3k9IjQ1MCIgcj0iMSIgb3BhY2l0eT0iMC40Ii8+CjxjaXJjbGUgY3g9IjM4MCIgY3k9IjU4MCIgcj0iMS4yIiBvcGFjaXR5PSIwLjUiLz4KPGNpcmNsZSBjeD0iODUwIiBjeT0iNTIwIiByPSIxIiBvcGFjaXR5PSIwLjQiLz4KPGNpcmNsZSBjeD0iMTEwMCIgY3k9IjY1MCIgcj0iMS4zIiBvcGFjaXR5PSIwLjYiLz4KPGNpcmNsZSBjeD0iMjIwIiBjeT0iODUwIiByPSIxIiBvcGFjaXR5PSIwLjQiLz4KPGNpcmNsZSBjeD0iNDUwIiBjeT0iOTUwIiByPSIxLjIiIG9wYWNpdHk9IjAuNSIvPgo8Y2lyY2xlIGN4PSI3ODAiIGN5PSI4ODAiIHI9IjEiIG9wYWNpdHk9IjAuNCIvPgo8Y2lyY2xlIGN4PSI5ODAiIGN5PSIxMDUwIiByPSIxLjMiIG9wYWNpdHk9IjAuNiIvPgo8Y2lyY2xlIGN4PSIzMjAiIGN5PSIxMTUwIiByPSIxIiBvcGFjaXR5PSIwLjQiLz4KPGNpcmNsZSBjeD0iNjUwIiBjeT0iMTIwMCIgcj0iMS4yIiBvcGFjaXR5PSIwLjUiLz4KPGNpcmNsZSBjeD0iOTUwIiBjeT0iMTI4MCIgcj0iMSIgb3BhY2l0eT0iMC40Ii8+CjwvZz4KCjwhLS0gRm9ybWUgZ8Opb23DqXRyaXF1ZSBhYnN0cmFpdGUgKGhleGFnb25lIHN1YnRpbCkgZW4gYmFzIC0tPgo8ZyBvcGFjaXR5PSIwLjE1IiBzdHJva2U9IiM0ZDdhYjAiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSI+Cjxwb2x5Z29uIHBvaW50cz0iNjAwLDExMDAgNzUwLDExODAgNzUwLDEzNDAgNjAwLDE0MjAgNDUwLDEzNDAgNDUwLDExODAiIC8+CjwvZz4KCjwhLS0gUmVmbGV0L3NjYW4gbHVtaW5ldXggLS0+CjxyZWN0IHg9IjAiIHk9IjY4MCIgd2lkdGg9IjEyMDAiIGhlaWdodD0iNDAiIGZpbGw9InVybCgjbGluZUdsb3cpIiBvcGFjaXR5PSIwLjMiLz4KCjwhLS0gw4l0aXF1ZXR0ZSBkaXNjcsOodGUgZW4gaGF1dCAtLT4KPGcgb3BhY2l0eT0iMC41Ij4KPGxpbmUgeDE9IjgwIiB5MT0iMTAwIiB4Mj0iMTIwIiB5Mj0iMTAwIiBzdHJva2U9IiM0ZDdhYjAiIHN0cm9rZS13aWR0aD0iMSIvPgo8dGV4dCB4PSIxMzAiIHk9IjEwNSIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI2E4YzhlOCIgbGV0dGVyLXNwYWNpbmc9IjMiPkNPSEVTSUYuQVVUTyAvIFNZU1RFTSBBQ1RJVkU8L3RleHQ+CjwvZz4KCjwhLS0gQ29kZSBlbiBiYXMgLS0+CjxnIG9wYWNpdHk9IjAuNCI+Cjx0ZXh0IHg9IjgwIiB5PSIxMzQwIiBmb250LWZhbWlseT0ibW9ub3NwYWNlIiBmb250LXNpemU9IjEwIiBmaWxsPSIjYThjOGU4IiBsZXR0ZXItc3BhY2luZz0iMiI+WyBNT0JJTElUw4kgwrcgVFJBTlNQT1JUIMK3IExPR0lTVElRVUUgXTwvdGV4dD4KPC9nPgoKPC9zdmc+" alt="Cohesif Auto - Mobilité, Transport, Logistique" loading="eager">
-          <div class="hero-image-overlay"></div>
-          <div class="hero-grid-pattern"></div>
-        </div>
-
-        <div class="hero-floating-card">
-          <div class="floating-card-header">
-            <div class="floating-card-dot"></div>
-            <span>10+ ans d'expertise</span>
+        <div class="hero-panel">
+          <div class="hero-panel-header">
+            <div class="hero-panel-dot"></div>
+            <span class="hero-panel-label">5 UNIVERS · UN INTERLOCUTEUR</span>
           </div>
-          <div class="floating-card-stats">
-            <div class="floating-stat">
-              <span class="floating-stat-num">500<span class="pct">+</span></span>
-              <span class="floating-stat-label">véhicules traités</span>
+          <ul class="hero-panel-list">
+            <li>
+              <span class="hero-panel-num">01</span>
+              <div class="hero-panel-item">
+                <strong>Vente</strong>
+                <span>Prestige &amp; classique, neufs &amp; occasion</span>
+              </div>
+            </li>
+            <li>
+              <span class="hero-panel-num">02</span>
+              <div class="hero-panel-item">
+                <strong>Import</strong>
+                <span>Sourcing international Europe &amp; USA</span>
+              </div>
+            </li>
+            <li>
+              <span class="hero-panel-num">03</span>
+              <div class="hero-panel-item">
+                <strong>Particuliers</strong>
+                <span>Accompagnement personnalisé, clés en main</span>
+              </div>
+            </li>
+            <li>
+              <span class="hero-panel-num">04</span>
+              <div class="hero-panel-item">
+                <strong>Flottes pro</strong>
+                <span>LLD · LOA · 3 à 50 véhicules</span>
+              </div>
+            </li>
+            <li>
+              <span class="hero-panel-num">05</span>
+              <div class="hero-panel-item">
+                <strong>Atelier collection</strong>
+                <span>Pièces rares, vintage &amp; youngtimers</span>
+              </div>
+            </li>
+          </ul>
+          <div class="hero-panel-stats">
+            <div class="hero-panel-stat">
+              <strong>500+</strong>
+              <span>véhicules traités</span>
             </div>
-            <div class="floating-stat-sep"></div>
-            <div class="floating-stat">
-              <span class="floating-stat-num">40<span class="pct">+</span></span>
-              <span class="floating-stat-label">partenaires EU</span>
+            <div class="hero-panel-stat-sep"></div>
+            <div class="hero-panel-stat">
+              <strong>10+</strong>
+              <span>ans d'expertise</span>
             </div>
-          </div>
-        </div>
-
-        <div class="hero-badge-tag">
-          <span class="badge-tag-icon">★</span>
-          <div>
-            <span class="badge-tag-num">10+ ans</span>
-            <span class="badge-tag-label">d'expertise</span>
+            <div class="hero-panel-stat-sep"></div>
+            <div class="hero-panel-stat">
+              <strong>40+</strong>
+              <span>partenaires EU</span>
+            </div>
           </div>
         </div>
       </div>
