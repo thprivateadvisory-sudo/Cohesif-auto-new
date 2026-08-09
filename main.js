@@ -156,7 +156,7 @@
       }
 
       try {
-        const resp = await fetch('https://formspree.io/f/xblwjrpk', {
+        const resp = await fetch('https://formspree.io/f/mzdnndna', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
           body: JSON.stringify({
@@ -166,7 +166,7 @@
             phone: data.telephone,
             subject: data.sujet,
             message: data.message,
-            _subject: `[Cohesif Auto] ${data.sujet} — ${data.nom}`
+            _subject: `Cohesif Auto — ${data.sujet} — ${data.nom}`
           })
         });
 
