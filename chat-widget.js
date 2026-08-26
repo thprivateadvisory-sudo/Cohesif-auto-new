@@ -62,7 +62,7 @@
     {
       id: 'devis',
       question: 'Devis gratuit',
-      answer: 'Tous nos devis sont gratuits, personnalisés et sans engagement. Valables 30 jours. On vous répond sous 48h. Remplissez notre formulaire de contact ou appelez-nous directement au <a href="tel:0760903774" style="color:#1e3a5f;font-weight:600">07 60 90 37 74</a>. 📞',
+      answer: 'Tous nos devis sont gratuits, personnalisés et sans engagement. Valables 30 jours. On vous répond sous 48h. Remplissez notre formulaire de contact.',
       suggestions: ['Contact', 'Flottes professionnelles', 'Import automobile']
     },
     {
@@ -80,7 +80,7 @@
     {
       id: 'contact',
       question: 'Contact',
-      answer: 'Contactez-nous par email : <a href="mailto:cohesifauto@gmail.com" style="color:#1e3a5f;font-weight:600">cohesifauto@gmail.com</a>, par téléphone au <a href="tel:0760903774" style="color:#1e3a5f;font-weight:600">07 60 90 37 74</a> ou via notre <a href="#contact" style="color:#1e3a5f;font-weight:600;text-decoration:underline">formulaire de contact</a>. Réponse sous 48h ! 📩',
+      answer: 'Contactez-nous par email : <a href="mailto:cohesifauto@gmail.com" style="color:#1e3a5f;font-weight:600">cohesifauto@gmail.com</a> ou via notre <a href="#contact" style="color:#1e3a5f;font-weight:600;text-decoration:underline">formulaire de contact</a>. Réponse sous 48h ! 📩',
       suggestions: ['Devis gratuit', 'Flottes professionnelles', 'Import automobile']
     },
     {
