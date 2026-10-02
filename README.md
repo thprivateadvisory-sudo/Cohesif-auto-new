@@ -132,8 +132,8 @@ Les coordonnées sont à 4 endroits dans `index.html` :
 
 Faire un **Find & Replace** :
 - `cohesifauto@gmail.com` → nouvel email
-- `0760903774` (lien `tel:`) → nouveau numéro
-- `07 60 90 37 74` (affichage) → nouveau numéro
+- `0756855727` (lien `tel:`) → nouveau numéro
+- `07 56 85 57 27` (affichage) → nouveau numéro
 
 ### Modifier la palette de couleurs
 
@@ -187,7 +187,7 @@ Cohesif Auto fait partie du **Groupe Cohesif**, qui réunit 5 pôles synergiques
 ## Contact
 
 📧 cohesifauto@gmail.com
-📞 07 60 90 37 74
+📞 07 56 85 57 27
 
 **Groupe Cohesif**
 SIRET : 889 287 462 00036
