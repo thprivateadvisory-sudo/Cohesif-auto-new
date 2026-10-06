@@ -100,25 +100,19 @@ Uploader tout le contenu du dossier à la racine du domaine via FTP. Le site fon
 
 ## Fonctionnalités
 
-### Côté UI
-- **Hero** avec visuel premium et CTA orientés conversion
-- **5 univers** filtrables (Tout / Particulier / Professionnel)
-- **Animation des stats** au scroll (compteur animé)
-- **Cas d'usage** avec exemples concrets
-- **Bandeau garanties** rassurant (devis gratuit, sans engagement, 48h)
-- **Formulaire de contact** complet avec pré-remplissage du sujet
-- **Sticky CTA mobile** : bouton flottant Devis + Appel
-- **Pages légales** complètes (Mentions légales, RGPD, CGV)
+Page d'accueil pensée pour la conversion (refonte octobre 2026) :
 
-### Côté technique
-- **100% responsive** : mobile, tablette, desktop, 4K
-- **Fond clair forcé** : pas de mode sombre involontaire
-- **Animations performantes** (`requestAnimationFrame`, `IntersectionObserver`)
-- **Accessibilité** : `aria-*`, navigation clavier, contraste AA
-- **Lazy loading** des images
-- **SEO-friendly** : meta tags, sémantique HTML5
-
----
+- **Hero avec formulaire en 3 étapes** (projet → véhicule/budget → coordonnées), adapté au type de projet
+- **Barre de réassurance** : contrôle du véhicule, démarches, livraison, prix annoncé à l'avance
+- **Services** : achat accompagné, prestige, flottes entreprise, pièces de collection
+- **Comparatif** annonces / concession / Cohesif Auto
+- **Méthode en 4 étapes** et **focus import Europe**
+- **Simulateur de financement** Cohesif Leasing + demande en modal
+- **Bloc Groupe Cohesif** (SIRET, adresse, pôles) et **FAQ** (balisage schema.org FAQPage)
+- **Contact** : téléphone, WhatsApp, email + formulaire
+- **Barre de contact mobile** (Appeler / WhatsApp / Propositions)
+- Tous les formulaires envoient vers Formspree (`main.js`, constante `FORM_ENDPOINT`)
+- Événements de mesure (`generate_lead`, `cta_click`, `lead_step`) envoyés automatiquement à GA4 / GTM / Plausible dès qu'un de ces outils est installé
 
 ## Personnalisation rapide
 
@@ -132,22 +126,13 @@ Les coordonnées sont à 4 endroits dans `index.html` :
 
 Faire un **Find & Replace** :
 - `cohesifauto@gmail.com` → nouvel email
+- `33756855727` (liens `wa.me` et `tel:+33…`) → nouveau numéro
 - `0756855727` (lien `tel:`) → nouveau numéro
 - `07 56 85 57 27` (affichage) → nouveau numéro
 
 ### Modifier la palette de couleurs
 
-Dans `assets/css/styles.css`, en haut :
-
-```css
-:root {
-  --accent: #1e3a5f;        /* Bleu acier principal */
-  --accent-light: #2a4d7a;  /* Bleu plus clair */
-  --bg: #eef0f2;            /* Fond gris clair */
-  --bg-tint: #f0f4f8;       /* Fond bleu très clair */
-  --ink: #0f1720;           /* Texte sombre */
-}
-```
+Dans `styles.css`, bloc `:root` : `--blue-600` (accent / boutons), `--ink-900` et `--ink-950` (texte et sections sombres).
 
 ### Modifier les informations légales
 
