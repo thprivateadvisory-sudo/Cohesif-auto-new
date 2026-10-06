@@ -20,7 +20,7 @@ def included(items):
 
 IMG_CLIO = ("img/achat-clio.webp", "Renault Clio préparée et livrée par Cohesif Auto", 900, 600)
 IMG_URUS = ("img/prestige-urus.webp", "Lamborghini Urus devant l'atelier Cohesif Auto", 900, 606)
-IMG_IMPORT = ("img/import-sourcing.webp", "Sourcing international de véhicules en Europe", 900, 531)
+IMG_IMPORT = ("https://images.pexels.com/photos/31390896/pexels-photo-31390896.jpeg?auto=compress&cs=tinysrgb&w=1200", "Voitures sur une autoroute allemande au coucher du soleil", 1200, 900)
 
 PROCESS = """<ol class="num">
 <li><strong>Brief de 15 minutes</strong> : modèle, budget, usage, kilométrage, options indispensables et délai.</li>

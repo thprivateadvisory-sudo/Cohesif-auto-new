@@ -24,7 +24,7 @@ PHONE = "07 56 85 57 27"
 EMAIL = "cohesifauto@gmail.com"
 WA = "https://wa.me/33756855727?text=Bonjour%2C%20je%20cherche%20un%20v%C3%A9hicule%20%3A%20"
 TODAY = date.today().isoformat()
-ASSET_V = "4"
+ASSET_V = "5"
 
 NAV = [
     ("Chasseur auto", "chasseur-automobile.html"),
@@ -455,7 +455,7 @@ def build_page(p):
         src, alt, w, h = p["image"]
         media = f"""
     <div class="page-hero-media">
-      <img src="{src}" alt="{esc(alt)}" width="{w}" height="{h}" fetchpriority="high">
+      <img src="{esc(src)}" alt="{esc(alt)}" width="{w}" height="{h}" fetchpriority="high" onerror="this.parentNode.hidden=true">
     </div>"""
     meta = ""
     if is_guide:
