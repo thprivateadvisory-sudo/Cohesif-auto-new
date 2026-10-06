@@ -1,0 +1,13 @@
+{
+  "name": "Cohesif Auto",
+  "short_name": "Cohesif Auto",
+  "lang": "fr",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#0b1220",
+  "icons": [
+    { "src": "/img/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/img/icon-180.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

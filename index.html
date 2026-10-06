@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light only">
-<title>Cohesif Auto — Achat & import de voitures, livrées chez vous | Propositions sous 48h</title>
-<meta name="description" content="Cohesif Auto trouve votre prochaine voiture en France ou en Europe, la fait contrôler, négocie le prix, gère la carte grise et vous la livre. Propositions chiffrées gratuites sous 48h. Flottes pro en LLD/LOA.">
-<meta name="robots" content="index, follow">
+<title>Mandataire auto & import de voitures d'Europe | Cohesif Auto</title>
+<meta name="description" content="Mandataire et chasseur auto : on trouve votre voiture en France ou en Europe, on la contrôle, on gère la carte grise et on la livre. Propositions gratuites sous 48h.">
+<meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#0b1220">
 <link rel="canonical" href="https://cohesifauto.fr/">
 
@@ -15,6 +15,8 @@
 <meta property="og:locale" content="fr_FR">
 <meta property="og:url" content="https://cohesifauto.fr/">
 <meta property="og:title" content="Cohesif Auto — Votre prochaine voiture, trouvée, vérifiée, livrée">
+<meta name="twitter:title" content="Cohesif Auto — Votre prochaine voiture, trouvée, vérifiée, livrée">
+<meta name="twitter:description" content="Recherche, import d'Europe, contrôle, carte grise et livraison partout en France. Propositions chiffrées gratuites sous 48h.">
 <meta property="og:description" content="Recherche, import d'Europe, contrôle, carte grise et livraison partout en France. Propositions chiffrées gratuites sous 48h.">
 <meta property="og:image" content="https://cohesifauto.fr/img/og-cohesif-auto.jpg">
 <meta property="og:image:width" content="1200">
@@ -22,34 +24,65 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://cohesifauto.fr/img/og-cohesif-auto.jpg">
 
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-auto.png">
-<link rel="apple-touch-icon" href="favicon-auto.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/icon-32.png">
+<link rel="apple-touch-icon" href="img/icon-180.png">
+<link rel="manifest" href="site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="img/hero-urus.webp" imagesrcset="img/hero-urus-800.webp 800w, img/hero-urus.webp 1528w" imagesizes="100vw">
-<link rel="stylesheet" href="styles.css?v=2">
+<link rel="stylesheet" href="styles.css?v=3">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "AutoDealer",
-  "name": "Cohesif Auto",
-  "url": "https://cohesifauto.fr",
-  "logo": "https://cohesifauto.fr/logo-cohesif-auto.png",
-  "image": "https://cohesifauto.fr/img/og-cohesif-auto.jpg",
-  "telephone": "+33756855727",
-  "email": "cohesifauto@gmail.com",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "200 rue de la Croix-Nivert",
-    "addressLocality": "Paris",
-    "postalCode": "75015",
-    "addressCountry": "FR"
-  },
-  "areaServed": "FR",
-  "description": "Recherche, achat et import de véhicules en France et en Europe, flottes professionnelles en LLD/LOA, recherche de pièces de collection.",
-  "parentOrganization": { "@type": "Organization", "name": "Groupe Cohesif" }
+  "@graph": [
+    {
+      "@type": "AutoDealer",
+      "@id": "https://cohesifauto.fr/#business",
+      "name": "Cohesif Auto",
+      "url": "https://cohesifauto.fr/",
+      "logo": "https://cohesifauto.fr/logo-cohesif-auto.png",
+      "image": "https://cohesifauto.fr/img/og-cohesif-auto.jpg",
+      "telephone": "+33756855727",
+      "email": "cohesifauto@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "200 rue de la Croix-Nivert",
+        "addressLocality": "Paris",
+        "postalCode": "75015",
+        "addressRegion": "Île-de-France",
+        "addressCountry": "FR"
+      },
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "09:00",
+        "closes": "19:00"
+      }],
+      "areaServed": {"@type": "Country", "name": "France"},
+      "description": "Mandataire et chasseur automobile : recherche, achat et import de véhicules en France et en Europe, flottes professionnelles en LLD/LOA, recherche de pièces de collection.",
+      "parentOrganization": {"@type": "Organization", "name": "Groupe Cohesif"},
+      "makesOffer": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Chasseur automobile", "url": "https://cohesifauto.fr/chasseur-automobile.html"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Import de voiture d'Allemagne", "url": "https://cohesifauto.fr/import-voiture-allemagne.html"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Import de voiture d'Europe", "url": "https://cohesifauto.fr/import-voiture-europe.html"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Voitures de prestige et sportives", "url": "https://cohesifauto.fr/voiture-prestige.html"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Véhicules d'entreprise, utilitaires et LLD", "url": "https://cohesifauto.fr/vehicules-entreprise-lld.html"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Financement auto : LOA, LLD, crédit", "url": "https://cohesifauto.fr/financement-voiture.html"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Pièces auto de collection", "url": "https://cohesifauto.fr/pieces-auto-collection.html"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Mandataire auto à Paris et en Île-de-France", "url": "https://cohesifauto.fr/mandataire-auto-paris.html"}}
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://cohesifauto.fr/#website",
+      "name": "Cohesif Auto",
+      "url": "https://cohesifauto.fr/",
+      "inLanguage": "fr-FR",
+      "publisher": {"@id": "https://cohesifauto.fr/#business"}
+    }
+  ]
 }
 </script>
 </head>
@@ -96,16 +129,16 @@
 <!-- ============ HEADER ============ -->
 <header class="header">
   <div class="container">
-    <a href="#" class="logo" aria-label="Cohesif Auto — accueil">
-      <img src="logo-cohesif-auto.png" alt="Cohesif Auto" width="183" height="36">
+    <a href="./" class="logo" aria-label="Cohesif Auto — accueil">
+      <img src="img/logo-cohesif-auto.webp" alt="Cohesif Auto" width="183" height="36">
     </a>
     <nav class="nav" aria-label="Navigation principale">
-      <a href="#services">Services</a>
-      <a href="#import">Import Europe</a>
-      <a href="#methode">Comment ça marche</a>
-      <a href="#pro">Entreprises</a>
-      <a href="#financement">Financement</a>
-      <a href="#faq">FAQ</a>
+      <a href="chasseur-automobile.html">Chasseur auto</a>
+      <a href="import-voiture-allemagne.html">Import Allemagne</a>
+      <a href="voiture-prestige.html">Prestige</a>
+      <a href="vehicules-entreprise-lld.html">Entreprises</a>
+      <a href="financement-voiture.html">Financement</a>
+      <a href="guides.html">Guides</a>
     </nav>
     <div class="header-cta">
       <a class="header-phone" href="tel:+33756855727" aria-label="Appeler le 07 56 85 57 27">
@@ -121,18 +154,18 @@
 
 <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu">
   <div class="mobile-menu-head">
-    <img src="logo-cohesif-auto.png" alt="Cohesif Auto" style="height:30px;width:auto">
+    <img src="img/logo-cohesif-auto.webp" alt="Cohesif Auto" width="152" height="30" style="height:30px;width:auto">
     <button class="menu-toggle" id="menuClose" aria-label="Fermer le menu" style="display:inline-flex">
       <svg><use href="#i-x"/></svg>
     </button>
   </div>
   <nav aria-label="Navigation mobile">
-    <a href="#services">Services</a>
-    <a href="#import">Import Europe</a>
-    <a href="#methode">Comment ça marche</a>
-    <a href="#pro">Entreprises</a>
-    <a href="#financement">Financement</a>
-    <a href="#faq">FAQ</a>
+    <a href="chasseur-automobile.html">Chasseur auto</a>
+    <a href="import-voiture-allemagne.html">Import Allemagne</a>
+    <a href="voiture-prestige.html">Prestige</a>
+    <a href="vehicules-entreprise-lld.html">Entreprises</a>
+    <a href="financement-voiture.html">Financement</a>
+    <a href="guides.html">Guides</a>
   </nav>
   <div class="mobile-menu-actions">
     <a href="#devis" class="btn btn-primary btn-block">Mes propositions gratuites</a>
@@ -149,7 +182,7 @@
   </div>
   <div class="container">
     <div class="hero-copy">
-      <span class="hero-badge"><b>Groupe Cohesif</b> Achat · Import · Flottes pro</span>
+      <span class="hero-badge"><b>Groupe Cohesif</b> Mandataire &amp; chasseur automobile</span>
       <h1>Votre prochaine voiture. <span class="hl">Trouvée, vérifiée, livrée.</span></h1>
       <p class="hero-lead">Dites-nous ce que vous cherchez et votre budget. On fouille le marché <strong>français et européen</strong>, on fait contrôler le véhicule, on négocie, on gère la carte grise et on vous le <strong>livre chez vous</strong>.</p>
       <div class="hero-ctas">
@@ -208,7 +241,7 @@
         <fieldset class="form-step" data-step="2">
           <legend class="sr-only">Votre recherche</legend>
           <div class="field">
-            <label for="lf-modele" id="lf-modele-label">Quel véhicule recherchez-vous ?</label>
+            <label for="lf-modele" id="lf-modele-label">Quel véhicule recherchez-vous ?</label>
             <input id="lf-modele" name="modele" type="text" required placeholder="ex : Audi Q5, Tesla Model Y, Peugeot 3008…" autocomplete="off">
           </div>
           <div class="field-row">
@@ -268,14 +301,14 @@
 
       <div class="form-success" role="status">
         <div class="ok"><svg><use href="#i-check"/></svg></div>
-        <h3>Demande bien reçue !</h3>
-        <p>Un conseiller vous rappelle sous 48h ouvrées avec des propositions chiffrées. Pressé ? Écrivez-nous directement.</p>
+        <h3>Demande bien reçue !</h3>
+        <p>Un conseiller vous rappelle sous 48h ouvrées avec des propositions chiffrées. Pressé ? Écrivez-nous directement.</p>
         <a class="btn btn-wa" href="https://wa.me/33756855727" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Continuer sur WhatsApp</a>
       </div>
 
       <div class="lead-card-foot">
         <svg width="16" height="16"><use href="#i-phone"/></svg>
-        Vous préférez parler ? <a href="tel:+33756855727">07 56 85 57 27</a>
+        Vous préférez parler ? <a href="tel:+33756855727">07 56 85 57 27</a>
       </div>
     </div>
   </div>
@@ -324,7 +357,7 @@
             <li><svg><use href="#i-check"/></svg>Historique, kilométrage et état vérifiés</li>
             <li><svg><use href="#i-check"/></svg>Reprise de votre véhicule actuel possible</li>
           </ul>
-          <a href="#devis" class="svc-link" data-preset="Acheter un véhicule">Lancer ma recherche <svg><use href="#i-arrow"/></svg></a>
+          <a href="chasseur-automobile.html" class="svc-link">Notre service de chasseur auto <svg><use href="#i-arrow"/></svg></a>
         </div>
       </article>
 
@@ -333,13 +366,13 @@
         <div class="svc-body">
           <span class="svc-tag">Premium &amp; sportives</span>
           <h3>Véhicules de prestige</h3>
-          <p>GT, sportives, SUV haut de gamme : on cherche la configuration exacte que vous voulez, en France ou à l'étranger, avec un contrôle complet avant achat.</p>
+          <p>GT, sportives, SUV haut de gamme : on cherche la configuration exacte que vous voulez, en France ou à l'étranger, avec un contrôle complet avant achat.</p>
           <ul class="svc-list">
             <li><svg><use href="#i-check"/></svg>Recherche de configuration et d'options précises</li>
             <li><svg><use href="#i-check"/></svg>Contrôle sur place avant tout engagement</li>
             <li><svg><use href="#i-check"/></svg>Livraison fermée sur demande</li>
           </ul>
-          <a href="#devis" class="svc-link" data-preset="Acheter un véhicule">Trouver mon véhicule <svg><use href="#i-arrow"/></svg></a>
+          <a href="voiture-prestige.html" class="svc-link">Voitures de prestige <svg><use href="#i-arrow"/></svg></a>
         </div>
       </article>
 
@@ -349,7 +382,7 @@
           <span class="svc-tag">Entreprises</span>
           <h3>Flottes &amp; utilitaires</h3>
           <p>De 3 à 50 véhicules, en LLD, LOA ou achat. On sélectionne, on finance, on livre. Vos équipes roulent, vous ne gérez rien.</p>
-          <a href="#pro" class="svc-link">Équiper mon entreprise <svg><use href="#i-arrow"/></svg></a>
+          <a href="vehicules-entreprise-lld.html" class="svc-link">Véhicules d'entreprise &amp; LLD <svg><use href="#i-arrow"/></svg></a>
         </div>
       </article>
 
@@ -358,8 +391,8 @@
           <div class="svc-icon"><svg><use href="#i-gear"/></svg></div>
           <span class="svc-tag">Collection</span>
           <h3>Pièces rares &amp; anciennes</h3>
-          <p>Vous restaurez une ancienne ou une youngtimer ? On recherche les pièces neuves, d'origine (NOS) ou reconditionnées auprès de spécialistes en Europe et aux États-Unis.</p>
-          <a href="#devis" class="svc-link" data-preset="Pièce de collection">Trouver ma pièce <svg><use href="#i-arrow"/></svg></a>
+          <p>Vous restaurez une ancienne ou une youngtimer ? On recherche les pièces neuves, d'origine (NOS) ou reconditionnées auprès de spécialistes en Europe et aux États-Unis.</p>
+          <a href="pieces-auto-collection.html" class="svc-link">Pièces de collection <svg><use href="#i-arrow"/></svg></a>
         </div>
       </article>
     </div>
@@ -441,7 +474,7 @@
       <li class="step reveal">
         <div class="step-num">1</div>
         <h3>Vous nous briefez</h3>
-        <p>Modèle, budget, usage, délai : par téléphone, WhatsApp ou via le formulaire.</p>
+        <p>Modèle, budget, usage, délai : par téléphone, WhatsApp ou via le formulaire.</p>
         <span class="step-time">15 minutes</span>
       </li>
       <li class="step reveal">
@@ -484,14 +517,14 @@
     <div class="reveal">
       <span class="eyebrow">Import Europe</span>
       <h2 style="margin:14px 0 16px">Le marché européen, <span class="accent">sans les complications.</span></h2>
-      <p style="font-size:17px">Le marché allemand de l'occasion est bien plus grand que le marché français : plus de choix, des configurations mieux équipées et souvent des prix plus bas sur le premium. On s'occupe de tout ce qui fait peur dans un import.</p>
+      <p style="font-size:17px">Le marché allemand de l'occasion est bien plus grand que le marché français : plus de choix, des configurations mieux équipées et souvent des prix plus bas sur le premium. On s'occupe de tout ce qui fait peur dans un import.</p>
       <ul class="included">
         <li><span class="ico"><svg><use href="#i-search"/></svg></span><div><b>Recherche ciblée</b><span>Selon votre cahier des charges précis</span></div></li>
         <li><span class="ico"><svg><use href="#i-shield"/></svg></span><div><b>Contrôle sur place</b><span>Avant tout achat, photos et rapport</span></div></li>
         <li><span class="ico"><svg><use href="#i-doc"/></svg></span><div><b>Formalités françaises</b><span>Certificat de conformité, quitus fiscal, carte grise</span></div></li>
         <li><span class="ico"><svg><use href="#i-truck"/></svg></span><div><b>Transport assuré</b><span>Jusqu'à votre porte, partout en France</span></div></li>
       </ul>
-      <a href="#devis" class="btn btn-dark" data-preset="Importer d'Europe">Chiffrer mon import <svg><use href="#i-arrow"/></svg></a>
+      <div class="hero-ctas" style="margin-top:0"><a href="#devis" class="btn btn-dark" data-preset="Importer d'Europe">Chiffrer mon import <svg><use href="#i-arrow"/></svg></a><a href="import-voiture-allemagne.html" class="btn btn-ghost">Import d'Allemagne : le détail</a></div>
     </div>
   </div>
 </section>
@@ -502,7 +535,7 @@
     <div class="section-head reveal">
       <span class="eyebrow">Entreprises &amp; artisans</span>
       <h2>Vos véhicules de société, sans immobiliser votre trésorerie.</h2>
-      <p>Utilitaires pour vos équipes terrain, véhicules de fonction ou flotte complète : on sélectionne, on finance et on livre clés en main. Un contrat, un interlocuteur.</p>
+      <p>Utilitaires pour vos équipes terrain, véhicules de fonction ou flotte complète : on sélectionne, on finance et on livre clés en main. Un contrat, un interlocuteur.</p>
     </div>
 
     <div class="pro-grid">
@@ -514,7 +547,7 @@
       <div class="pro-card reveal">
         <span class="k">Court &amp; moyen terme</span>
         <h3>Location flexible</h3>
-        <p>Quelques jours à quelques mois : chantier, renfort saisonnier, remplacement d'un véhicule immobilisé.</p>
+        <p>Quelques jours à quelques mois : chantier, renfort saisonnier, remplacement d'un véhicule immobilisé.</p>
       </div>
       <div class="pro-card reveal">
         <span class="k">Comptant ou financé</span>
@@ -532,6 +565,7 @@
 
     <div class="pro-ctas">
       <a href="#devis" class="btn btn-primary" data-preset="Flotte entreprise">Demander un devis entreprise <svg><use href="#i-arrow"/></svg></a>
+      <a href="vehicules-entreprise-lld.html" class="btn btn-ghost-light">Nos offres entreprise</a>
       <a href="tel:+33756855727" class="btn btn-ghost-light"><svg><use href="#i-phone"/></svg>07 56 85 57 27</a>
     </div>
   </div>
@@ -541,15 +575,16 @@
 <section class="section" id="financement">
   <div class="container finance">
     <div class="reveal">
-      <img src="cohesif-leasing-logo.png" alt="Cohesif Leasing" class="finance-logo" loading="lazy" width="168" height="84">
+      <img src="img/cohesif-leasing-logo.webp" alt="Cohesif Leasing" class="finance-logo" loading="lazy" width="220" height="38">
       <span class="eyebrow">Financement</span>
       <h2 style="margin:14px 0 16px">Roulez maintenant, <span class="accent">payez en plusieurs fois.</span></h2>
-      <p style="font-size:17px">Crédit, LOA ou LLD : notre partenaire du groupe, Cohesif Leasing, monte votre dossier en même temps que nous cherchons votre véhicule. Une seule démarche pour vous.</p>
+      <p style="font-size:17px">Crédit, LOA ou LLD : notre partenaire du groupe, Cohesif Leasing, monte votre dossier en même temps que nous cherchons votre véhicule. Une seule démarche pour vous.</p>
       <ul class="svc-list" style="margin-top:24px">
         <li><svg><use href="#i-check"/></svg>Réponse de principe rapide</li>
         <li><svg><use href="#i-check"/></svg>Particuliers et professionnels</li>
         <li><svg><use href="#i-check"/></svg>Sans engagement tant que vous n'avez pas signé</li>
       </ul>
+      <p style="margin-top:20px"><a href="guide-lld-loa-credit-auto.html" class="svc-link">LLD, LOA ou crédit : notre comparatif <svg><use href="#i-arrow"/></svg></a></p>
     </div>
 
     <div class="sim reveal" id="simulateur">
@@ -580,7 +615,7 @@
 </section>
 
 <!-- ============ GROUPE ============ -->
-<section class="section section-tint" id="groupe">
+<section class="section" id="groupe">
   <div class="container group">
     <div class="reveal">
       <span class="eyebrow">Qui sommes-nous</span>
@@ -604,6 +639,37 @@
   </div>
 </section>
 
+<!-- ============ GUIDES ============ -->
+<section class="section section-tint" id="guides">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Guides pratiques</span>
+      <h2>Bien acheter, <span class="accent">bien importer.</span></h2>
+      <p>Nos guides pour comprendre l'import, la carte grise, les taxes et le financement avant de vous lancer. <a href="guides.html" style="color:var(--blue-600);font-weight:700">Voir tous les guides →</a></p>
+    </div>
+    <div class="card-grid reveal">
+      <a class="link-card" href="guide-importer-voiture-allemagne.html">
+        <span class="k">Guide</span>
+        <b>Importer une voiture d&#x27;Allemagne : le guide complet</b>
+        <span>Recherche, vérifications, documents, transport et carte grise, étape par étape.</span>
+        <span class="more">Lire le guide <svg><use href="#i-arrow"/></svg></span>
+      </a>
+      <a class="link-card" href="guide-carte-grise-vehicule-importe.html">
+        <span class="k">Guide</span>
+        <b>Carte grise d&#x27;un véhicule importé : démarches et coût</b>
+        <span>COC, quitus fiscal, contrôle technique, ANTS : les documents et le calcul du prix.</span>
+        <span class="more">Lire le guide <svg><use href="#i-arrow"/></svg></span>
+      </a>
+      <a class="link-card" href="guide-malus-tva-voiture-importee.html">
+        <span class="k">Guide</span>
+        <b>TVA et malus d&#x27;une voiture importée</b>
+        <span>Neuf ou occasion au sens fiscal, quitus, malus réduit : ce que vous paierez vraiment.</span>
+        <span class="more">Lire le guide <svg><use href="#i-arrow"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ============ FAQ ============ -->
 <section class="section" id="faq">
   <div class="container">
@@ -614,49 +680,49 @@
 
     <div class="faq reveal">
       <details>
-        <summary>Combien coûte votre service ?</summary>
+        <summary>Combien coûte votre service ?</summary>
         <div class="ans">
-          <p>Le brief et les propositions sont gratuits. Quand vous choisissez un véhicule, vous recevez un devis écrit avec le prix total : véhicule, nos honoraires, transport et immatriculation. Vous savez exactement ce que vous payez avant de vous engager.</p>
+          <p>Le brief et les propositions sont gratuits. Quand vous choisissez un véhicule, vous recevez un devis écrit avec le prix total : véhicule, nos honoraires, transport et immatriculation. Vous savez exactement ce que vous payez avant de vous engager.</p>
         </div>
       </details>
       <details>
-        <summary>En combien de temps vais-je recevoir mon véhicule ?</summary>
+        <summary>En combien de temps vais-je recevoir mon véhicule ?</summary>
         <div class="ans">
           <p>Vous recevez des propositions sous 48h ouvrées. Ensuite, comptez en général 1 à 3 semaines pour un véhicule trouvé en France et 4 à 8 semaines pour un import, selon le pays d'origine et le délai d'immatriculation.</p>
         </div>
       </details>
       <details>
-        <summary>Importer une voiture d'Allemagne, c'est compliqué ?</summary>
+        <summary>Importer une voiture d'Allemagne, c'est compliqué ?</summary>
         <div class="ans">
-          <p>Pour vous, non : on s'en charge. Un import depuis l'Union européenne demande un certificat de conformité, un quitus fiscal, parfois un contrôle technique, puis la demande de carte grise française. Nous gérons l'ensemble et vous livrons le véhicule immatriculé.</p>
+          <p>Pour vous, non : on s'en charge. Un import depuis l'Union européenne demande un certificat de conformité, un quitus fiscal, parfois un contrôle technique, puis la demande de carte grise française. Nous gérons l'ensemble et vous livrons le véhicule immatriculé.</p>
         </div>
       </details>
       <details>
-        <summary>Y a-t-il de la TVA ou un malus à payer sur un import ?</summary>
+        <summary>Y a-t-il de la TVA ou un malus à payer sur un import ?</summary>
         <div class="ans">
           <p>Pour un véhicule considéré comme neuf (moins de 6 mois ou moins de 6 000 km), la TVA est payée en France. Le malus écologique français s'applique lors de la première immatriculation en France, y compris pour une occasion importée. Ces montants sont intégrés dans le prix que nous vous annonçons.</p>
         </div>
       </details>
       <details>
-        <summary>Comment savoir si le véhicule est en bon état ?</summary>
+        <summary>Comment savoir si le véhicule est en bon état ?</summary>
         <div class="ans">
-          <p>Chaque véhicule est contrôlé avant l'achat : état mécanique et carrosserie, historique d'entretien, cohérence du kilométrage. Vous recevez les photos et les conclusions. Si le contrôle n'est pas satisfaisant, on passe au véhicule suivant.</p>
+          <p>Chaque véhicule est contrôlé avant l'achat : état mécanique et carrosserie, historique d'entretien, cohérence du kilométrage. Vous recevez les photos et les conclusions. Si le contrôle n'est pas satisfaisant, on passe au véhicule suivant.</p>
         </div>
       </details>
       <details>
-        <summary>Le véhicule a-t-il une garantie ?</summary>
+        <summary>Le véhicule a-t-il une garantie ?</summary>
         <div class="ans">
           <p>Un véhicule récent peut rester couvert par la garantie constructeur, valable dans toute l'Union européenne. Pour les autres, une extension de garantie peut être proposée selon le véhicule. On vous indique la couverture exacte dans chaque proposition.</p>
         </div>
       </details>
       <details>
-        <summary>Pouvez-vous reprendre ma voiture actuelle ?</summary>
+        <summary>Pouvez-vous reprendre ma voiture actuelle ?</summary>
         <div class="ans">
-          <p>Oui, la reprise de votre véhicule actuel est possible. Précisez-le lors de votre demande : nous l'estimons et la déduisons du prix final.</p>
+          <p>Oui, la reprise de votre véhicule actuel est possible. Précisez-le lors de votre demande : nous l'estimons et la déduisons du prix final.</p>
         </div>
       </details>
       <details>
-        <summary>Travaillez-vous avec les professionnels ?</summary>
+        <summary>Travaillez-vous avec les professionnels ?</summary>
         <div class="ans">
           <p>Oui. Nous équipons artisans, PME et entreprises en utilitaires et véhicules de société, à l'achat, en LLD ou en location courte et moyenne durée, avec un devis entreprise sous 48h.</p>
         </div>
@@ -735,7 +801,7 @@
       </form>
       <div class="form-success" role="status">
         <div class="ok"><svg><use href="#i-check"/></svg></div>
-        <h3>Demande bien reçue !</h3>
+        <h3>Demande bien reçue !</h3>
         <p>Un conseiller revient vers vous sous 48h ouvrées.</p>
       </div>
     </div>
@@ -749,27 +815,31 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="logo-cohesif-auto-white.png" alt="Cohesif Auto" loading="lazy" width="173" height="34">
-        <p>Achat accompagné, import européen, flottes professionnelles et pièces de collection. Le pôle mobilité du Groupe Cohesif.</p>
+        <img src="img/logo-cohesif-auto-white.webp" alt="Cohesif Auto" loading="lazy" width="173" height="34">
+        <p>Mandataire et chasseur automobile : achat accompagné, import de véhicules d'Europe, flottes d'entreprise et pièces de collection. Le pôle mobilité du Groupe Cohesif.</p>
       </div>
       <div>
         <h4>Services</h4>
         <ul>
-          <li><a href="#services">Achat accompagné</a></li>
-          <li><a href="#import">Import Europe</a></li>
-          <li><a href="#pro">Flottes entreprise</a></li>
-          <li><a href="#financement">Financement</a></li>
-          <li><a href="#services">Pièces de collection</a></li>
+          <li><a href="chasseur-automobile.html">Chasseur automobile</a></li>
+          <li><a href="import-voiture-allemagne.html">Import voiture Allemagne</a></li>
+          <li><a href="import-voiture-europe.html">Import voiture Europe</a></li>
+          <li><a href="voiture-prestige.html">Voitures de prestige</a></li>
+          <li><a href="vehicules-entreprise-lld.html">Véhicules d&#x27;entreprise &amp; LLD</a></li>
+          <li><a href="financement-voiture.html">Financement auto</a></li>
+          <li><a href="pieces-auto-collection.html">Pièces de collection</a></li>
+          <li><a href="mandataire-auto-paris.html">Mandataire auto Paris</a></li>
         </ul>
       </div>
       <div>
-        <h4>Groupe Cohesif</h4>
+        <h4>Guides</h4>
         <ul>
-          <li><a href="https://cohesifleasing.fr" target="_blank" rel="noopener">Cohesif Leasing</a></li>
-          <li><a href="https://cohesifenergy.fr" target="_blank" rel="noopener">Cohesif Energy</a></li>
-          <li><a href="https://cohesifbtp.fr" target="_blank" rel="noopener">Cohesif BTP</a></li>
-          <li><a href="https://cohesifaccess.fr" target="_blank" rel="noopener">Cohesif Access</a></li>
-          <li><a href="https://cohesifcommerce.fr" target="_blank" rel="noopener">Cohesif Commerce</a></li>
+          <li><a href="guide-importer-voiture-allemagne.html">Importer une voiture d&#x27;Allemagne</a></li>
+          <li><a href="guide-carte-grise-vehicule-importe.html">Carte grise d&#x27;un véhicule importé</a></li>
+          <li><a href="guide-malus-tva-voiture-importee.html">TVA et malus d&#x27;une voiture importée</a></li>
+          <li><a href="guide-lld-loa-credit-auto.html">LLD, LOA ou crédit auto</a></li>
+          <li><a href="guide-acheter-voiture-occasion-sans-arnaque.html">Acheter une occasion sans arnaque</a></li>
+          <li><a href="guides.html">Tous les guides</a></li>
         </ul>
       </div>
       <div>
@@ -778,6 +848,12 @@
           <li><a href="tel:+33756855727">07 56 85 57 27</a></li>
           <li><a href="mailto:cohesifauto@gmail.com">cohesifauto@gmail.com</a></li>
           <li>200 rue de la Croix-Nivert<br>75015 Paris</li>
+        </ul>
+        <h4 style="margin-top:26px">Groupe Cohesif</h4>
+        <ul>
+          <li><a href="https://cohesifleasing.fr" target="_blank" rel="noopener">Cohesif Leasing</a></li>
+          <li><a href="https://cohesifenergy.fr" target="_blank" rel="noopener">Cohesif Energy</a></li>
+          <li><a href="https://cohesifbtp.fr" target="_blank" rel="noopener">Cohesif BTP</a></li>
         </ul>
       </div>
     </div>
@@ -826,7 +902,7 @@
     </form>
     <div class="form-success" role="status">
       <div class="ok"><svg><use href="#i-check"/></svg></div>
-      <h3>Demande envoyée !</h3>
+      <h3>Demande envoyée !</h3>
       <p>Un conseiller Cohesif Leasing vous contacte sous 24h ouvrées.</p>
     </div>
   </div>
@@ -848,13 +924,13 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type": "Question", "name": "Combien coûte votre service ?", "acceptedAnswer": {"@type": "Answer", "text": "Le brief et les propositions sont gratuits. Quand vous choisissez un véhicule, vous recevez un devis écrit avec le prix total : véhicule, honoraires, transport et immatriculation."}},
-    {"@type": "Question", "name": "En combien de temps vais-je recevoir mon véhicule ?", "acceptedAnswer": {"@type": "Answer", "text": "Propositions sous 48h ouvrées. Ensuite 1 à 3 semaines pour un véhicule trouvé en France et 4 à 8 semaines pour un import, selon le pays d'origine."}},
-    {"@type": "Question", "name": "Importer une voiture d'Allemagne, c'est compliqué ?", "acceptedAnswer": {"@type": "Answer", "text": "Cohesif Auto gère le certificat de conformité, le quitus fiscal, le contrôle technique si nécessaire et la carte grise française, puis livre le véhicule immatriculé."}},
-    {"@type": "Question", "name": "Pouvez-vous reprendre ma voiture actuelle ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, la reprise est possible : nous l'estimons et la déduisons du prix final."}}
+    {"@type": "Question", "name": "Combien coûte votre service ?", "acceptedAnswer": {"@type": "Answer", "text": "Le brief et les propositions sont gratuits. Quand vous choisissez un véhicule, vous recevez un devis écrit avec le prix total : véhicule, honoraires, transport et immatriculation."}},
+    {"@type": "Question", "name": "En combien de temps vais-je recevoir mon véhicule ?", "acceptedAnswer": {"@type": "Answer", "text": "Propositions sous 48h ouvrées. Ensuite 1 à 3 semaines pour un véhicule trouvé en France et 4 à 8 semaines pour un import, selon le pays d'origine."}},
+    {"@type": "Question", "name": "Importer une voiture d'Allemagne, c'est compliqué ?", "acceptedAnswer": {"@type": "Answer", "text": "Cohesif Auto gère le certificat de conformité, le quitus fiscal, le contrôle technique si nécessaire et la carte grise française, puis livre le véhicule immatriculé."}},
+    {"@type": "Question", "name": "Pouvez-vous reprendre ma voiture actuelle ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, la reprise est possible : nous l'estimons et la déduisons du prix final."}}
   ]
 }
 </script>
-<script src="main.js?v=2" defer></script>
+<script src="main.js?v=3" defer></script>
 </body>
 </html>

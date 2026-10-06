@@ -114,6 +114,23 @@ Page d'accueil pensée pour la conversion (refonte octobre 2026) :
 - Tous les formulaires envoient vers Formspree (`main.js`, constante `FORM_ENDPOINT`)
 - Événements de mesure (`generate_lead`, `cta_click`, `lead_step`) envoyés automatiquement à GA4 / GTM / Plausible dès qu'un de ces outils est installé
 
+## Pages services et guides (référencement)
+
+Les pages services, les guides, la page `guides.html`, la `404.html`, `sitemap.xml` et `llms.txt` sont **générés** :
+
+- contenu : `tools/pages_contenu.py` (un dictionnaire par page : titre, description, H1, corps, FAQ, pages liées)
+- gabarit : `tools/build_pages.py` (en-tête, pied de page, formulaire, fil d'Ariane, données structurées schema.org)
+
+Pour ajouter ou modifier une page, éditer `tools/pages_contenu.py` puis lancer :
+
+```bash
+python3 tools/build_pages.py
+```
+
+Ne pas modifier les pages générées à la main : elles seraient écrasées au prochain lancement. `index.html` reste écrit à la main.
+
+Règles de référencement appliquées : un seul H1 par page, titre ≤ 65 caractères, description ≤ 160 caractères, URL canonique, Open Graph, fil d'Ariane, données structurées (AutoDealer, Service, Article, FAQPage, BreadcrumbList), maillage interne entre services et guides.
+
 ## Personnalisation rapide
 
 ### Modifier les coordonnées
