@@ -24,7 +24,7 @@ PHONE = "07 56 85 57 27"
 EMAIL = "cohesifauto@gmail.com"
 WA = "https://wa.me/33756855727?text=Bonjour%2C%20je%20cherche%20un%20v%C3%A9hicule%20%3A%20"
 TODAY = date.today().isoformat()
-ASSET_V = "3"
+ASSET_V = "4"
 
 NAV = [
     ("Chasseur auto", "chasseur-automobile.html"),
@@ -361,7 +361,7 @@ def footer():
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Cohesif Auto · Groupe Cohesif · SIRET 889 287 462 00036</span>
+      <span>© 2026 Cohesif Auto · Groupe Cohesif</span>
       <nav aria-label="Liens légaux">
         <a href="mentions-legales.html">Mentions légales</a>
         <a href="confidentialite.html">Confidentialité</a>

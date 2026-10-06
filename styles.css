@@ -358,7 +358,18 @@ p  { color: var(--ink-600); }
 
 /* ---------- Financing ---------- */
 .finance { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
-.finance-logo { height: 84px; width: auto; margin: -14px 0 6px -18px; }
+.photo { margin: 0; border-radius: var(--r-xl); overflow: hidden; background: var(--ink-100); box-shadow: var(--shadow-md); }
+.photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.finance-photo { aspect-ratio: 16 / 9; margin-bottom: 28px; }
+.partner { display: inline-flex; align-items: center; gap: 14px; margin-top: 26px; padding: 10px 16px; border: 1px solid var(--ink-200); border-radius: var(--r-md); background: var(--white); }
+.partner span { font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-500); }
+.partner img { height: 22px; width: auto; }
+.pro-photo { aspect-ratio: 21 / 8; margin-bottom: 28px; box-shadow: none; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.04); }
+.group-photo { aspect-ratio: 16 / 9; margin-bottom: 16px; }
+.inspect { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; align-items: center; margin-top: 40px; padding: 24px; background: var(--white); border: 1px solid var(--ink-200); border-radius: var(--r-xl); }
+.inspect .photo { aspect-ratio: 3 / 2; box-shadow: none; border-radius: var(--r-lg); }
+.inspect h3 { font-size: 22px; margin-bottom: 10px; }
+.inspect p { font-size: 16px; }
 .sim { background: var(--white); border: 1px solid var(--ink-200); border-radius: var(--r-xl); padding: 32px; box-shadow: var(--shadow-md); }
 .sim h3 { font-size: 18px; margin-bottom: 20px; }
 .sim-range { margin-bottom: 22px; }
@@ -497,6 +508,8 @@ a.pole:hover { border-color: var(--ink-900); transform: translateY(-2px); }
   .process { grid-template-columns: 1fr 1fr; }
   .split, .finance, .group, .contact-grid { grid-template-columns: 1fr; gap: 44px; }
   .pro-grid { grid-template-columns: 1fr; }
+  .inspect { grid-template-columns: 1fr; gap: 20px; }
+  .pro-photo { aspect-ratio: 16 / 9; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 
