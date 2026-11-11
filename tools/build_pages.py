@@ -78,6 +78,8 @@ def head(title, description, path, og_image="img/og-cohesif-auto.jpg", schemas=(
 <meta name="description" content="{esc(description)}">
 <meta name="robots" content="{robots}">
 <meta name="theme-color" content="#0b1220">
+<meta name="application-name" content="Cohesif Auto">
+<meta name="apple-mobile-web-app-title" content="Cohesif Auto">
 <link rel="canonical" href="{canonical}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Cohesif Auto">
@@ -389,7 +391,8 @@ def tail():
 
 # ---------------------------------------------------------------- pages
 
-ORG = {"@type": "AutoDealer", "name": "Cohesif Auto", "url": SITE + "/", "telephone": "+33756855727",
+ORG = {"@type": "AutoDealer", "@id": SITE + "/#business", "name": "Cohesif Auto",
+       "alternateName": ["CohesifAuto", "Cohésif Auto", "cohesifauto.fr"], "url": SITE + "/", "telephone": "+33756855727",
        "address": {"@type": "PostalAddress", "streetAddress": "200 rue de la Croix-Nivert",
                    "addressLocality": "Paris", "postalCode": "75015", "addressCountry": "FR"}}
 
