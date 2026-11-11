@@ -1,0 +1,22 @@
+# Signale automatiquement les pages du site à Bing, Yandex, Seznam, Naver
+# (et donc DuckDuckGo, Ecosia, Qwant, ChatGPT Search, Copilot) à chaque mise à jour.
+name: IndexNow
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Attendre la mise en ligne GitHub Pages
+        run: sleep 90
+      - name: Envoyer les URL du sitemap à IndexNow
+        run: |
+          KEY=a1ab01b26a2342718c4c5e832b0b51af
+          URLS=$(grep -o '<loc>[^<]*</loc>' sitemap.xml | sed 's/<[^>]*>//g' | python3 -c 'import sys,json;print(json.dumps([l.strip() for l in sys.stdin if l.strip()]))')
+          curl -sS -X POST https://api.indexnow.org/indexnow \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            -d "{\"host\":\"cohesifauto.fr\",\"key\":\"$KEY\",\"keyLocation\":\"https://cohesifauto.fr/$KEY.txt\",\"urlList\":$URLS}" \
+            -w '\nHTTP %{http_code}\n'
