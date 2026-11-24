@@ -1,7 +1,7 @@
 # Paiement en ligne : mise en service
 
 Le client paie son forfait de recherche **sans quitter cohesifauto.fr** :
-le formulaire Stripe s'affiche dans une fenêtre du site (carte, Apple Pay, Google Pay).
+le formulaire de paiement Cohesif Auto s’affiche dans une fenêtre du site (carte, Apple Pay, Google Pay), sans aucune page Stripe.
 
 Le site est hébergé sur GitHub Pages, qui ne fait qu'afficher des pages. Il faut donc un petit
 programme (`worker.js`) qui prépare chaque paiement avec la clé Stripe secrète.
@@ -13,7 +13,7 @@ Tableau de bord Stripe > **Développeurs** > **Clés API** :
 
 - copier la **clé publiable** (`pk_live_…`) ;
 - créer une **clé restreinte** nommée « Site Cohesif Auto », avec uniquement la permission
-  **Checkout Sessions : écriture**, et la copier (`rk_live_…`).
+  **PaymentIntents : écriture**, et la copier (`rk_live_…`).
 
 Ne jamais mettre la clé secrète ou restreinte dans le site ni l'envoyer par message.
 

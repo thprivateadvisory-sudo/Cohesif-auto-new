@@ -1,17 +1,16 @@
-// Cohesif Auto : création des paiements Stripe intégrés au site.
-// Cloudflare Worker (gratuit). Le site ne quitte jamais cohesifauto.fr :
-// ce programme prépare la session de paiement, Stripe l'affiche dans le site.
+// Cohesif Auto : paiement du forfait de recherche, directement sur le site.
+// Cloudflare Worker (gratuit). Le formulaire est celui du site (logo, couleurs) ;
+// ce programme crée le paiement avec la clé Stripe, qui ne quitte jamais Cloudflare.
 //
 // Variables à définir dans Cloudflare (Settings > Variables and Secrets) :
-//   STRIPE_SECRET_KEY       (secret)  clé secrète Stripe, commence par sk_live_
-//   STRIPE_PUBLISHABLE_KEY  (texte)   clé publiable Stripe, commence par pk_live_
+//   STRIPE_SECRET_KEY       (secret)  clé restreinte Stripe rk_live_ (permission PaymentIntents : écriture)
+//   STRIPE_PUBLISHABLE_KEY  (texte)   clé publiable Stripe pk_live_
 
 const OFFRES = {
-  france:   { price: 'price_1UfHWyRmrarRZT7e29c6IfOf', nom: 'Recherche en France' },
-  europe:   { price: 'price_1UfHX5RmrarRZT7e1eqAYSLK', nom: 'Recherche et import Europe' },
-  prestige: { price: 'price_1UfHX8RmrarRZT7eNXuVNdu0', nom: 'Recherche prestige et collection' },
+  france:   { montant: 9900,  nom: 'Recherche en France' },
+  europe:   { montant: 14900, nom: 'Recherche et import Europe' },
+  prestige: { montant: 24900, nom: 'Recherche prestige et collection' },
 };
-
 const ORIGINES = ['https://cohesifauto.fr', 'https://www.cohesifauto.fr'];
 
 function cors(origin) {
@@ -22,89 +21,62 @@ function cors(origin) {
     'Vary': 'Origin',
   };
 }
-
 function json(data, status, origin) {
   return new Response(JSON.stringify(data), {
     status: status || 200,
     headers: Object.assign({ 'Content-Type': 'application/json' }, cors(origin)),
   });
 }
-
-async function stripe(env, method, path, params) {
-  const body = params ? new URLSearchParams(params).toString() : undefined;
-  const res = await fetch('https://api.stripe.com/v1/' + path, {
-    method,
-    headers: {
-      Authorization: 'Bearer ' + env.STRIPE_SECRET_KEY,
-      'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    body,
-  });
-  return { ok: res.ok, data: await res.json() };
-}
+function texte(v, max) { return String(v || '').replace(/\s+/g, ' ').trim().slice(0, max); }
 
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     const origin = request.headers.get('Origin') || '';
-
     if (request.method === 'OPTIONS') return new Response(null, { headers: cors(origin) });
 
-    // Création d'une session de paiement
-    if (request.method === 'POST' && url.pathname === '/session') {
+    if (request.method === 'GET' && url.pathname === '/config') {
+      return json({ publishableKey: env.STRIPE_PUBLISHABLE_KEY }, 200, origin);
+    }
+
+    if (request.method === 'POST' && url.pathname === '/paiement') {
       if (origin && !ORIGINES.includes(origin)) return json({ error: 'Origine refusée' }, 403, origin);
       let input = {};
-      try { input = await request.json(); } catch (e) { /* corps vide */ }
+      try { input = await request.json(); } catch (e) {}
       const offre = OFFRES[input.offre];
       if (!offre) return json({ error: 'Offre inconnue' }, 400, origin);
       if (input.consentement !== true) return json({ error: 'Consentement requis' }, 400, origin);
+      const nom = texte(input.nom, 120);
+      const email = texte(input.email, 200);
+      const tel = texte(input.telephone, 40);
+      if (!nom || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email) || tel.replace(/\D/g, '').length < 9) {
+        return json({ error: 'Coordonnées incomplètes' }, 400, origin);
+      }
 
-      const maintenant = new Date().toISOString();
-      const params = {
-        mode: 'payment',
-        'line_items[0][price]': offre.price,
-        'line_items[0][quantity]': '1',
-        locale: 'fr',
-        redirect_on_completion: 'if_required',
-        return_url: 'https://cohesifauto.fr/?paiement={CHECKOUT_SESSION_ID}#tarifs',
-        customer_creation: 'always',
-        'adaptive_pricing[enabled]': 'false',
-        'branding_settings[display_name]': 'Cohesif Auto',
-        'branding_settings[button_color]': '#1d4fb0',
-        'branding_settings[font_family]': 'inter',
-        'branding_settings[border_style]': 'rounded',
-        'phone_number_collection[enabled]': 'true',
-        'custom_fields[0][key]': 'recherche',
-        'custom_fields[0][label][type]': 'custom',
-        'custom_fields[0][label][custom]': 'Votre recherche (modèle, budget, délai)',
-        'custom_fields[0][type]': 'text',
-        'custom_fields[0][optional]': 'true',
-        'custom_text[submit][message]': 'Paiement sécurisé par Stripe. Ce forfait est déduit de nos honoraires si vous achetez un véhicule par notre intermédiaire.',
-        'payment_intent_data[description]': 'Cohesif Auto – ' + offre.nom,
-        'payment_intent_data[statement_descriptor_suffix]': 'COHESIF AUTO',
-        'payment_intent_data[metadata][offre]': input.offre,
+      const params = new URLSearchParams({
+        amount: String(offre.montant),
+        currency: 'eur',
+        'payment_method_types[]': 'card',
+        description: 'Cohesif Auto – ' + offre.nom,
+        receipt_email: email,
+        statement_descriptor_suffix: 'COHESIF AUTO',
         'metadata[offre]': input.offre,
+        'metadata[nom]': nom,
+        'metadata[email]': email,
+        'metadata[telephone]': tel,
+        'metadata[recherche]': texte(input.recherche, 480),
         'metadata[consentement_execution_immediate]': 'oui',
         'metadata[consentement_cgv]': 'oui',
-        'metadata[consentement_horodatage]': maintenant,
-      };
-
-      // Selon la version d'API du compte, le mode intégré s'appelle "embedded_page" ou "embedded".
-      let r = await stripe(env, 'POST', 'checkout/sessions', Object.assign({ ui_mode: 'embedded_page' }, params));
-      if (!r.ok && r.data && r.data.error && /ui_mode|redirect_on_completion/.test(r.data.error.message || '')) {
-        r = await stripe(env, 'POST', 'checkout/sessions', Object.assign({ ui_mode: 'embedded' }, params));
-      }
-      if (!r.ok) return json({ error: 'Paiement indisponible' }, 502, origin);
-      return json({ clientSecret: r.data.client_secret, publishableKey: env.STRIPE_PUBLISHABLE_KEY }, 200, origin);
-    }
-
-    // Vérification après un paiement avec redirection (PayPal, Klarna…)
-    if (request.method === 'GET' && url.pathname === '/statut') {
-      const id = url.searchParams.get('session_id') || '';
-      if (!/^cs_(live|test)_[A-Za-z0-9]+$/.test(id)) return json({ error: 'Session invalide' }, 400, origin);
-      const r = await stripe(env, 'GET', 'checkout/sessions/' + id);
-      if (!r.ok) return json({ error: 'Introuvable' }, 404, origin);
-      return json({ statut: r.data.payment_status, offre: (r.data.metadata || {}).offre || '' }, 200, origin);
+        'metadata[consentement_horodatage]': new Date().toISOString(),
+      });
+      const res = await fetch('https://api.stripe.com/v1/payment_intents', {
+        method: 'POST',
+        headers: { Authorization: 'Bearer ' + env.STRIPE_SECRET_KEY, 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: params.toString(),
+      });
+      const data = await res.json();
+      if (!res.ok) return json({ error: 'Paiement indisponible' }, 502, origin);
+      return json({ clientSecret: data.client_secret }, 200, origin);
     }
 
     return json({ error: 'Introuvable' }, 404, origin);

@@ -35,7 +35,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="img/hero-urus.webp" imagesrcset="img/hero-urus-800.webp 800w, img/hero-urus.webp 1528w" imagesizes="100vw">
-<link rel="stylesheet" href="styles.css?v=7">
+<link rel="stylesheet" href="styles.css?v=8">
 
 <script type="application/ld+json">
 {
@@ -981,18 +981,46 @@
         <input type="checkbox" id="payConsent">
         <span>J'accepte les <a href="cgv.html" target="_blank" rel="noopener">conditions générales</a> et je demande que la recherche commence immédiatement. Je reconnais qu'une fois les propositions transmises, je perds mon droit de rétractation et le forfait n'est pas remboursable.</span>
       </label>
-      <button type="button" class="btn btn-primary btn-block" id="payStart" disabled><svg><use href="#i-shield"/></svg><span>Payer en toute sécurité</span></button>
+      <button type="button" class="btn btn-primary btn-block" id="payStart" disabled><svg><use href="#i-shield"/></svg><span>Continuer</span></button>
       <p class="pay-error" id="payError" role="alert" hidden></p>
       <div class="pay-trust">
-        <span><svg><use href="#i-shield"/></svg>Paiement chiffré par Stripe</span>
+        <span><svg><use href="#i-shield"/></svg>Paiement 100&nbsp;% sécurisé</span>
         <span class="pay-methods"><i>CB</i><i>Visa</i><i>Mastercard</i><i>Apple&nbsp;Pay</i><i>Google&nbsp;Pay</i></span>
-        <small>Vos données bancaires ne passent jamais par nos serveurs. Reçu envoyé par email.</small>
+        <small>Données bancaires chiffrées, jamais conservées par Cohesif Auto. Reçu envoyé par email.</small>
       </div>
     </div>
 
     <div data-pay="form" hidden>
-      <button type="button" class="pay-back" id="payBack"><svg><use href="#i-arrow"/></svg>Retour</button>
-      <div id="payCheckout" class="pay-checkout"></div>
+      <div class="pay-form-head">
+        <button type="button" class="pay-back" id="payBack" aria-label="Retour"><svg><use href="#i-arrow"/></svg></button>
+        <img src="img/logo-cohesif-auto.webp" alt="Cohesif Auto" width="152" height="30" class="pay-logo">
+      </div>
+      <div class="pay-line"><span id="payOffre2">Recherche</span><b id="payPrix2">99 €</b></div>
+      <form id="payForm" novalidate>
+        <div class="field">
+          <label for="pf-nom">Prénom et nom</label>
+          <input id="pf-nom" type="text" required autocomplete="name">
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="pf-email">Email</label>
+            <input id="pf-email" type="email" required autocomplete="email" inputmode="email">
+          </div>
+          <div class="field">
+            <label for="pf-tel">Téléphone</label>
+            <input id="pf-tel" type="tel" required autocomplete="tel" inputmode="tel">
+          </div>
+        </div>
+        <div class="field">
+          <label for="pf-rech">Votre recherche <small>(facultatif)</small></label>
+          <input id="pf-rech" type="text" placeholder="ex : BMW X3 hybride, budget 40 000 €">
+        </div>
+        <p class="pay-label">Paiement</p>
+        <div id="payElement" class="pay-element"><span class="pay-loading">Chargement du paiement sécurisé…</span></div>
+        <button type="submit" class="btn btn-primary btn-block" id="paySubmit"><svg><use href="#i-shield"/></svg><span>Payer</span></button>
+        <p class="pay-error" id="payError2" role="alert" hidden></p>
+        <p class="pay-secure"><svg><use href="#i-shield"/></svg>Paiement 100&nbsp;% sécurisé. Vos données bancaires sont chiffrées et ne sont jamais conservées par Cohesif Auto.</p>
+      </form>
     </div>
 
     <div data-pay="ok" hidden class="pay-ok">
@@ -1069,6 +1097,6 @@
 }
 </script>
 <script src="main.js?v=4" defer></script>
-<script src="paiement.js?v=2" defer></script>
+<script src="paiement.js?v=3" defer></script>
 </body>
 </html>
