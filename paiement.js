@@ -2,7 +2,7 @@
 (function () {
   // Adresse du Worker Cloudflare qui prépare les paiements (voir tools/paiement-worker).
   // Tant qu'elle est vide, les boutons « Lancer ma recherche » mènent au formulaire de contact.
-  var PAIEMENT_URL = '';
+  var PAIEMENT_URL = 'https://cohesif-paiement.muddy-fog-dddb.workers.dev';
 
   var OFFRES = {
     france:   { nom: 'Recherche en France', prix: '99 €' },
