@@ -35,7 +35,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="img/hero-urus.webp" imagesrcset="img/hero-urus-800.webp 800w, img/hero-urus.webp 1528w" imagesizes="100vw">
-<link rel="stylesheet" href="styles.css?v=6">
+<link rel="stylesheet" href="styles.css?v=7">
 
 <script type="application/ld+json">
 {
@@ -537,28 +537,29 @@
     </div>
 
     <div class="plans reveal">
-      <article class="plan">
+      <article class="plan" data-offre="france">
         <span class="plan-tag">France</span>
         <h3>Recherche en France</h3>
         <p class="plan-price"><b>99&nbsp;€</b><span>forfait de recherche</span></p>
         <ul class="plan-list"><li><svg><use href="#i-check"/></svg>2 à 5 véhicules sélectionnés et chiffrés</li><li><svg><use href="#i-check"/></svg>Historique et kilométrage vérifiés</li><li><svg><use href="#i-check"/></svg>Propositions sous 48h</li></ul>
-        <a href="#devis" class="btn btn-ghost btn-block" data-track="tarifs_cta">Lancer ma recherche</a>
+        <a href="#devis" data-offre-btn="france" class="btn btn-ghost btn-block" data-track="tarifs_cta">Lancer ma recherche</a>
       </article>
-      <article class="plan plan-featured">
+      <article class="plan plan-featured" data-offre="europe">
         <span class="plan-tag">Europe</span>
         <h3>Recherche et import</h3>
         <p class="plan-price"><b>149&nbsp;€</b><span>forfait de recherche</span></p>
         <ul class="plan-list"><li><svg><use href="#i-check"/></svg>Recherche dans toute l'Europe</li><li><svg><use href="#i-check"/></svg>Coût total livré : malus, transport, carte grise</li><li><svg><use href="#i-check"/></svg>Propositions sous 48h</li></ul>
-        <a href="#devis" class="btn btn-primary btn-block" data-track="tarifs_cta">Lancer ma recherche</a>
+        <a href="#devis" data-offre-btn="europe" class="btn btn-primary btn-block" data-track="tarifs_cta">Lancer ma recherche</a>
       </article>
-      <article class="plan">
+      <article class="plan" data-offre="prestige">
         <span class="plan-tag">Prestige</span>
         <h3>Prestige et collection</h3>
         <p class="plan-price"><b>249&nbsp;€</b><span>forfait de recherche</span></p>
         <ul class="plan-list"><li><svg><use href="#i-check"/></svg>Configuration et options exactes</li><li><svg><use href="#i-check"/></svg>Historique et entretien vérifiés en détail</li><li><svg><use href="#i-check"/></svg>France et étranger</li></ul>
-        <a href="#devis" class="btn btn-ghost btn-block" data-track="tarifs_cta">Lancer ma recherche</a>
+        <a href="#devis" data-offre-btn="prestige" class="btn btn-ghost btn-block" data-track="tarifs_cta">Lancer ma recherche</a>
       </article>
     </div>
+    <p class="plans-alt">Vous préférez en parler d'abord&nbsp;? <a href="tel:+33756855727">Appelez-nous au 07&nbsp;56&nbsp;85&nbsp;57&nbsp;27</a> ou <a href="#devis">envoyez une demande gratuite</a>.</p>
 
     <div class="fees reveal">
       <div class="fees-head">
@@ -959,6 +960,51 @@
   </div>
 </footer>
 
+<!-- ============ PAIEMENT ============ -->
+<div class="modal pay-modal" id="payModal" role="dialog" aria-modal="true" aria-labelledby="payTitle">
+  <div class="modal-box">
+    <button class="modal-close" type="button" data-close aria-label="Fermer">×</button>
+
+    <div data-pay="recap">
+      <h3 id="payTitle">Lancer votre recherche</h3>
+      <div class="pay-recap">
+        <div class="pay-recap-head"><span id="payOffre">Recherche</span><b id="payPrix">99 €</b></div>
+        <ul class="plan-list" id="payInclus"></ul>
+        <p class="pay-deduit"><svg><use href="#i-check"/></svg>Déduit de nos honoraires si vous achetez</p>
+      </div>
+      <ol class="pay-next">
+        <li><span><b>Paiement sécurisé</b> par carte, Apple&nbsp;Pay ou Google&nbsp;Pay, ici même.</span></li>
+        <li><span><b>Un conseiller vous appelle</b>, souvent dans la journée, pour préciser votre recherche.</span></li>
+        <li><span><b>Vos propositions chiffrées</b> arrivent sous 48h.</span></li>
+      </ol>
+      <label class="pay-consent">
+        <input type="checkbox" id="payConsent">
+        <span>J'accepte les <a href="cgv.html" target="_blank" rel="noopener">conditions générales</a> et je demande que la recherche commence immédiatement. Je reconnais qu'une fois les propositions transmises, je perds mon droit de rétractation et le forfait n'est pas remboursable.</span>
+      </label>
+      <button type="button" class="btn btn-primary btn-block" id="payStart" disabled><svg><use href="#i-shield"/></svg><span>Payer en toute sécurité</span></button>
+      <p class="pay-error" id="payError" role="alert" hidden></p>
+      <div class="pay-trust">
+        <span><svg><use href="#i-shield"/></svg>Paiement chiffré par Stripe</span>
+        <span class="pay-methods"><i>CB</i><i>Visa</i><i>Mastercard</i><i>Apple&nbsp;Pay</i><i>Google&nbsp;Pay</i></span>
+        <small>Vos données bancaires ne passent jamais par nos serveurs. Reçu envoyé par email.</small>
+      </div>
+    </div>
+
+    <div data-pay="form" hidden>
+      <button type="button" class="pay-back" id="payBack"><svg><use href="#i-arrow"/></svg>Retour</button>
+      <div id="payCheckout" class="pay-checkout"></div>
+    </div>
+
+    <div data-pay="ok" hidden class="pay-ok">
+      <span class="pay-ok-ico"><svg><use href="#i-check"/></svg></span>
+      <h3>Paiement confirmé, merci&nbsp;!</h3>
+      <p>Votre recherche est lancée. Un conseiller vous appelle très vite, souvent dans la journée, pour préciser votre projet. Vous recevez vos propositions chiffrées sous 48h.</p>
+      <p class="pay-ok-small">Un reçu vous a été envoyé par email. Une question&nbsp;? <a href="tel:+33756855727">07&nbsp;56&nbsp;85&nbsp;57&nbsp;27</a></p>
+      <button type="button" class="btn btn-primary btn-block" data-close>Fermer</button>
+    </div>
+  </div>
+</div>
+
 <!-- ============ LEASING MODAL ============ -->
 <div class="modal" id="leasingModal" role="dialog" aria-modal="true" aria-labelledby="leasingTitle">
   <div class="modal-box">
@@ -1023,5 +1069,6 @@
 }
 </script>
 <script src="main.js?v=4" defer></script>
+<script src="paiement.js?v=1" defer></script>
 </body>
 </html>
