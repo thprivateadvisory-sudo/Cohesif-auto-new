@@ -995,32 +995,7 @@
         <button type="button" class="pay-back" id="payBack" aria-label="Retour"><svg><use href="#i-arrow"/></svg></button>
         <img src="img/logo-cohesif-auto.webp" alt="Cohesif Auto" width="152" height="30" class="pay-logo">
       </div>
-      <div class="pay-line"><span id="payOffre2">Recherche</span><b id="payPrix2">99 €</b></div>
-      <form id="payForm" novalidate>
-        <div class="field">
-          <label for="pf-nom">Prénom et nom</label>
-          <input id="pf-nom" type="text" required autocomplete="name">
-        </div>
-        <div class="field-row">
-          <div class="field">
-            <label for="pf-email">Email</label>
-            <input id="pf-email" type="email" required autocomplete="email" inputmode="email">
-          </div>
-          <div class="field">
-            <label for="pf-tel">Téléphone</label>
-            <input id="pf-tel" type="tel" required autocomplete="tel" inputmode="tel">
-          </div>
-        </div>
-        <div class="field">
-          <label for="pf-rech">Votre recherche <small>(facultatif)</small></label>
-          <input id="pf-rech" type="text" placeholder="ex : BMW X3 hybride, budget 40 000 €">
-        </div>
-        <p class="pay-label">Paiement</p>
-        <div id="payElement" class="pay-element"><span class="pay-loading">Chargement du paiement sécurisé…</span></div>
-        <button type="submit" class="btn btn-primary btn-block" id="paySubmit"><svg><use href="#i-shield"/></svg><span>Payer</span></button>
-        <p class="pay-error" id="payError2" role="alert" hidden></p>
-        <p class="pay-secure"><svg><use href="#i-shield"/></svg>Paiement 100&nbsp;% sécurisé. Vos données bancaires sont chiffrées et ne sont jamais conservées par Cohesif Auto.</p>
-      </form>
+      <div id="payCheckout" class="pay-checkout"></div>
     </div>
 
     <div data-pay="ok" hidden class="pay-ok">
@@ -1097,6 +1072,6 @@
 }
 </script>
 <script src="main.js?v=4" defer></script>
-<script src="paiement.js?v=3" defer></script>
+<script src="paiement.js?v=4" defer></script>
 </body>
 </html>
